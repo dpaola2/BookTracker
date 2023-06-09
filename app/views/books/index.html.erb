@@ -1,12 +1,23 @@
 <h1>Books</h1>
 
-<div id="books">
+<%= link_to "New book", new_book_path %>
+
+<div id="books" class="d-grid">
   <% @books.each do |book| %>
-    <%= render book %>
     <p>
-      <%= link_to "Show this book", book %>
+      <h3><%= book.title %></h3>
+      <% if book.author.present? %>
+        <%= book.author %>
+      <% else %>
+        <em>No author</em>
+      <% end %>
+
+      <% if book.shelf.present? %>
+        <%= book.shelf.name %>
+      <% else %>
+        <em>No shelf</em>
+      <% end %>
+      <%= link_to "Edit", edit_book_path(book) %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New book", new_book_path %>
