@@ -1,23 +1,28 @@
 <h1>Books</h1>
 
-<%= link_to "New book", new_book_path %>
+<div class="d-grid">
+  <%= link_to "New book", new_book_path, class: "btn btn-primary" %>
+</div>
 
-<div id="books" class="d-grid">
+<div id="books" class="list-group mt-3">
   <% @books.each do |book| %>
-    <p>
+    <%= link_to book_path(book), class: "list-group-item list-group-item-action" do %>
       <h3><%= book.title %></h3>
-      <% if book.author.present? %>
+      <strong>Author:</strong><% if book.author.present? %>
         <%= book.author %>
       <% else %>
-        <em>No author</em>
+        <em>None</em>
       <% end %>
-
-      <% if book.shelf.present? %>
+      <br />
+      <strong>Shelf:</strong><% if book.shelf.present? %>
         <%= book.shelf.name %>
       <% else %>
-        <em>No shelf</em>
+        <em>None</em>
       <% end %>
-      <%= link_to "Edit", edit_book_path(book) %>
-    </p>
+      <br />
+      <% if !book.isbn.present? %>
+        <span class="badge bg-danger">No ISBN</span>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
