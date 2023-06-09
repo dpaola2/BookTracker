@@ -1,0 +1,12 @@
+<h1>Shelves</h1>
+
+<div id="shelves">
+  <% @shelves.each do |shelf| %>
+    <%= render shelf %>
+    <p>
+      <%= link_to "Show this shelf", shelf %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New shelf", new_shelf_path %>

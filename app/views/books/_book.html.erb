@@ -14,4 +14,13 @@
     <%= book.isbn %>
   </p>
 
+  <p>
+    <strong>Shelf:</strong>
+    <% if book.shelf.present? %>
+      <%= book.shelf.name %>
+    <% else %>
+      <em>None</em>
+    <% end %>
+  </p>
+
 </div>

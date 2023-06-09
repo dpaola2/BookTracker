@@ -27,6 +27,10 @@
   </div>
 
   <div>
+    <%= form.select :shelf_id, options_for_select( Shelf.all.map { |shelf| [shelf.name, shelf.id] } ), style: "display: block" %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

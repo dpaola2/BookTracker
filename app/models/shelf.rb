@@ -1,15 +1,12 @@
 # == Schema Information
 #
-# Table name: books
+# Table name: shelves
 #
 #  id         :bigint           not null, primary key
-#  author     :string
-#  isbn       :string
-#  title      :string
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  shelf_id   :integer
 #
-class Book < ApplicationRecord
-  belongs_to :shelf
+class Shelf < ApplicationRecord
+  has_many :books
 end

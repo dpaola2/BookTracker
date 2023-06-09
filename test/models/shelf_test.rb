@@ -1,18 +1,15 @@
 # == Schema Information
 #
-# Table name: books
+# Table name: shelves
 #
 #  id         :bigint           not null, primary key
-#  author     :string
-#  isbn       :string
-#  title      :string
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  shelf_id   :integer
 #
 require "test_helper"
 
-class BookTest < ActiveSupport::TestCase
+class ShelfTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
