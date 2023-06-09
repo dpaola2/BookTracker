@@ -1,6 +1,9 @@
 <div id="<%= dom_id book %>">
   <div class="row mt-3">
     <div class="col">
+      <% if book.image.attached? %>
+        <%= image_tag book.image, class: "img-thumbnail", style: "width: 150px;" %>
+      <% end %>
       <h3><%= book.title %></h3>
       <p>
         <strong>Author:</strong>
