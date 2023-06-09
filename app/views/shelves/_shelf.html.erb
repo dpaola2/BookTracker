@@ -1,7 +1,21 @@
 <div id="<%= dom_id shelf %>">
-  <p>
-    <strong>Name:</strong>
-    <%= shelf.name %>
-  </p>
+  <h2><%= shelf.name %></h2>
+
+  <ul class="list-group">
+    <% shelf.books.all.map do |book| %>
+      <%= link_to book_path(book), class: "list-group-item list-group-item-action" do %>
+        <h3><%= book.title %></h3>
+        <strong>Author:</strong><% if book.author.present? %>
+          <%= book.author %>
+        <% else %>
+          <em>None</em>
+        <% end %>
+        
+        <% if !book.isbn.present? %>
+          <span class="badge bg-danger">No ISBN</span>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
 
 </div>

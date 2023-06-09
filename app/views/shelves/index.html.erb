@@ -1,11 +1,11 @@
 <h1>Shelves</h1>
 
-<div id="shelves">
+<div id="shelves" class="list-group">
   <% @shelves.each do |shelf| %>
-    <%= render shelf %>
-    <p>
-      <%= link_to "Show this shelf", shelf %>
-    </p>
+    <%= link_to shelf_path(shelf), class: "list-group-item list-group-item-action" do %>
+      <h3><%= shelf.name %></h3>
+      <%= shelf.books.count %> books
+    <% end %>
   <% end %>
 </div>
 

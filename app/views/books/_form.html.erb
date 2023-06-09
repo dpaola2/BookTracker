@@ -11,26 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
+  <div class="mb-3">
+    <%= form.label :author, class: "form-label" %>
+    <%= form.text_field :author, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :isbn, style: "display: block" %>
-    <%= form.text_field :isbn %>
+  <div class="mb-3">
+    <%= form.label :isbn, class: "form-label" %>
+    <%= form.text_field :isbn, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.select :shelf_id, options_for_select( Shelf.all.map { |shelf| [shelf.name, shelf.id] } ), style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :shelf_id, "Shelf", class: "form-label" %>
+    <%= form.select :shelf_id, options_for_select( Shelf.all.map { |shelf| [shelf.name, shelf.id] } ), {}, class: "form-select" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3 d-grid">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

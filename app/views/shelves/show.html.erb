@@ -1,8 +1,13 @@
 <%= render @shelf %>
 
-<div>
-  <%= link_to "Edit this shelf", edit_shelf_path(@shelf) %> |
-  <%= link_to "Back to shelves", shelves_path %>
+<div class="d-grid mb-3">
+  <%= link_to "Edit this shelf", edit_shelf_path(@shelf), class: "btn btn-info" %>
+</div>
 
-  <%= button_to "Destroy this shelf", @shelf, method: :delete %>
+<div class="d-grid mb-3">
+  <%= link_to "Destroy this shelf", @shelf, data: { turbo_method: :delete }, class: "btn btn-danger" %>
+</div>
+
+<div class="mb-3">
+  <%= link_to "Back to shelves", shelves_path %>
 </div>
