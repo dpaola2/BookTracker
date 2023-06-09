@@ -13,15 +13,7 @@
   </head>
   <body>
     <div class="container">
-      <div>
-        <% if user_signed_in? %>
-          <%= link_to "Books", books_path %>
-          <%= link_to "Shelves", shelves_path %>
-          <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete } %>
-        <% else %>
-          <%= link_to "Sign In", new_user_session_path %>
-        <% end %>
-      </div>
+      <%= render "layouts/navbar" %>
 
       <% if alert %>
         <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">

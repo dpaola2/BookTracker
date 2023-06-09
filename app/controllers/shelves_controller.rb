@@ -4,7 +4,7 @@ class ShelvesController < ApplicationController
 
   # GET /shelves or /shelves.json
   def index
-    @shelves = Shelf.all
+    @shelves = Shelf.all.sort_by { |shelf| shelf.books.count }.reverse
   end
 
   # GET /shelves/1 or /shelves/1.json
