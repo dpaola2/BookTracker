@@ -1,182 +1,143 @@
-Item Title,List Name,List Description,Group,Date Added,Date Edited,Item Type,Notes,Pinned
-"All the Shah's Men","Abandoned / Disliked","","Completed Lists",11/22/22,11/6/22,Book,Abandoned for now,false
-"Cadillac Desert","Abandoned / Disliked","","Completed Lists",11/6/22,6/8/22,Book,,false
-"Don Vito","Abandoned / Disliked","","Completed Lists",11/22/22,11/22/22,Book,,false
-"Eon","Abandoned / Disliked","","Completed Lists",11/6/22,11/6/22,Book,Abandoned,false
-"Leadership Is Language","Abandoned / Disliked","","Completed Lists",11/6/22,11/6/22,Book,Disappointing,false
-"On China","Abandoned / Disliked","","Completed Lists",11/22/22,11/6/22,Book,Abandoned for now,false
-"Peopleware","Abandoned / Disliked","","Completed Lists",11/6/22,11/6/22,Book,Can’t finish it,false
-"Santorini","Abandoned / Disliked","","Completed Lists",12/27/22,12/27/22,Book,,false
-"Ski walkers at the pentagon","Abandoned / Disliked","","Completed Lists",12/18/22,12/18/22,Book,,false
-"The Becoming: A Post-Apocalyptic Zombie Thriller","Abandoned / Disliked","","Completed Lists",11/6/22,11/6/22,Book,Abandoned,false
-"The Fifth Season","Abandoned / Disliked","","Completed Lists",11/6/22,6/4/22,Book,,false
-"The Violin Conspiracy","Abandoned / Disliked","","Completed Lists",11/6/22,11/6/22,Book,Abandoned,false
-"Man's Search for Meaning","Books: Liked","","Completed Lists",12/17/22,12/18/22,Book,First part was great. Psychology part was boring and didn’t finish it.,false
-"Practical Object-Oriented Design in Ruby: An Agile Primer","Books: Liked","","Completed Lists",11/6/22,5/27/22,Book,,false
-"Sum vii","Books: Liked","","Completed Lists",11/6/22,11/6/22,Book,Read,false
-"The Fourth Turning","Books: Liked","","Completed Lists",11/22/22,11/22/22,Book,,false
-"The Message of the Sphinx","Books: Liked","","Completed Lists",11/22/22,11/6/22,Book,Read and loved! Need another,false
-"The great mental models","Books: Liked","","Completed Lists",11/6/22,11/6/22,Book,Read, need volume 2 next!,false
-"To Sleep in a Sea of Stars","Books: Liked","","Completed Lists",11/6/22,11/6/22,Book,Read,false
-"Zen in the Art of Archery","Books: Liked","","Completed Lists",11/6/22,4/30/22,Book,,false
-"Ancient Apocalypse","Movies & Shows: Liked","","Completed Lists",12/2/22,12/2/22,TV Show,,false
-"Obi-Wan Kenobi","Movies & Shows: Liked","","Completed Lists",11/22/22,11/6/22,TV Show,Great!,false
-"Ready Player One","Movies & Shows: Liked","","Completed Lists",11/22/22,11/6/22,Movie,Great!,false
-"The Book of Boba Fett","Movies & Shows: Liked","","Completed Lists",11/22/22,11/6/22,TV Show,Great!,false
-"1491 (Second Edition)","The Pile","","No Group",12/23/22,12/23/22,Book,,false
-"Cleopatra","The Pile","","No Group",1/23/23,1/23/23,Book,,false
-"Conversations with René Girard","The Pile","","No Group",12/26/22,12/26/22,Book,,false
-"Exploring Requirements 1: Quality Before Design","The Pile","","No Group",2/6/23,2/6/23,Book,,false
-"Fairy Tale","The Pile","","No Group",1/15/23,1/15/23,Book,,false
-"Four Thousand Weeks","The Pile","","No Group",2/2/23,2/2/23,Book,,false
-"Generating Business Referrals Without Asking","The Pile","","No Group",1/30/23,1/30/23,Book,,false
-"I Never Thought of It That Way","The Pile","","No Group",12/26/22,12/26/22,Book,,false
-"Joker","The Pile","","No Group",12/27/22,12/27/22,Movie,,false
-"Spirit Island","The Pile","","No Group",1/16/23,1/16/23,Board Game,,false
-"The Art of Learning","The Pile","","No Group",12/20/22,12/20/22,Book,,false
-"The Basic Laws of Human Stupidity","The Pile","","No Group",2/12/23,2/12/23,Book,,false
-"The Box","The Pile","","No Group",1/5/23,1/5/23,Book,,false
-"The Dictator's Learning Curve","The Pile","","No Group",12/26/22,12/26/22,Book,,false
-"The Five Dysfunctions of a Team","The Pile","","No Group",12/27/22,12/27/22,Book,,false
-"The Nazi Conscience","The Pile","","No Group",1/19/23,1/19/23,Book,,false
-"The Order of Time","The Pile","","No Group",1/5/23,1/5/23,Book,,false
-"The Whole-Brain Child","The Pile","","No Group",1/19/23,1/19/23,Book,,false
-"Thinking in Systems: International Bestseller","The Pile","","No Group",2/6/23,2/6/23,Book,,false
-"Bewilderment: A Novel","🏖 Misc Fiction","","Queue Lists",11/6/22,4/27/22,Book,,false
-"Devolution","🏖 Misc Fiction","","Queue Lists",11/6/22,6/4/22,Book,,false
-"LaserWriter II","🏖 Misc Fiction","","Queue Lists",11/6/22,10/30/22,Book,,false
-"Light From Uncommon Stars","🏖 Misc Fiction","","Queue Lists",11/6/22,5/17/22,Book,Reviewed by Dylan on Goodreads from UIUC,false
-"Savage Son","🏖 Misc Fiction","","Queue Lists",12/18/22,12/18/22,Book,,false
-"The Clan of the Cave Bear (with Bonus Content)","🏖 Misc Fiction","","Queue Lists",11/6/22,6/30/22,Book,,false
-"The Terminal List","🏖 Misc Fiction","","Queue Lists",12/18/22,12/18/22,Book,,false
-"True Believer","🏖 Misc Fiction","","Queue Lists",12/18/22,12/18/22,Book,,false
-"12 Rules for Life","💡Misc Nonfiction","","Queue Lists",5/24/22,11/6/22,Book,,true
-"Animal Farm","💡Misc Nonfiction","","Queue Lists",11/6/22,4/29/22,Book,,false
-"Atomic Habits","💡Misc Nonfiction","","Queue Lists",12/18/22,12/9/22,Book,,false
-"Birth and Death of Meaning","💡Misc Nonfiction","","Queue Lists",12/18/22,12/6/22,Book,,false
-"Border Hacker","💡Misc Nonfiction","","Queue Lists",11/6/22,7/3/22,Book,,false
-"Even ceos get fires","💡Misc Nonfiction","","Queue Lists",11/6/22,6/8/22,Book,,false
-"Flying Blind","💡Misc Nonfiction","","Queue Lists",11/6/22,10/16/22,Book,,false
-"Four Thousand Weeks","💡Misc Nonfiction","","Queue Lists",11/6/22,6/9/22,Book,,false
-"Free Range Kids By Lenore Skenazy","💡Misc Nonfiction","","Queue Lists",11/6/22,7/3/22,Book,,false
-"Hamlets mill","💡Misc Nonfiction","","Queue Lists",12/18/22,11/30/22,Book,,false
-"How Buildings Learn","💡Misc Nonfiction","","Queue Lists",11/6/22,6/24/22,Book,,false
-"How to Talk So Kids Will Listen & Listen So Kids Will Talk","💡Misc Nonfiction","","Queue Lists",4/27/22,11/6/22,Book,,false
-"Hunting Together","💡Misc Nonfiction","","Queue Lists",12/17/22,12/17/22,Book,,true
-"Impro","💡Misc Nonfiction","","Queue Lists",12/18/22,12/18/22,Book,,true
-"Mindfulness (In Plain English)","💡Misc Nonfiction","","Queue Lists",4/27/22,11/6/22,Book,,false
-"Naïve. Super","💡Misc Nonfiction","","Queue Lists",12/18/22,12/6/22,Book,,false
-"On Quality","💡Misc Nonfiction","","Queue Lists",4/27/22,4/27/22,Book,,false
-"Sons of Wichita","💡Misc Nonfiction","","Queue Lists",12/18/22,12/18/22,Book,,false
-"Story","💡Misc Nonfiction","","Queue Lists",11/6/22,6/16/22,Book,,false
-"The Alter Ego Effect","💡Misc Nonfiction","","Queue Lists",11/6/22,5/30/22,Book,,false
-"The Constitution of Knowledge","💡Misc Nonfiction","","Queue Lists",11/24/22,11/24/22,Book,,false
-"The Daily Stoic","💡Misc Nonfiction","","Queue Lists",12/26/22,12/26/22,Book,,true
-"The Dictator's Handbook","💡Misc Nonfiction","","Queue Lists",11/24/22,11/9/22,Book,,false
-"The Future and Its Enemies","💡Misc Nonfiction","","Queue Lists",11/6/22,6/5/22,Book,,false
-"The Great Mental Models Volume 2: Physics, Chemistry and Biology","💡Misc Nonfiction","","Queue Lists",11/6/22,5/15/22,Book,,false
-"The Great Mental Models Volume 3: Systems and Mathematics","💡Misc Nonfiction","","Queue Lists",11/6/22,5/15/22,Book,,false
-"The Greatest Beer Run Ever","💡Misc Nonfiction","","Queue Lists",12/18/22,11/29/22,Book,,false
-"The Internet Is Not What You Think It Is","💡Misc Nonfiction","","Queue Lists",11/6/22,5/5/22,Book,,false
-"The Machiavellians","💡Misc Nonfiction","","Queue Lists",11/6/22,6/3/22,Book,,false
-"The Mind Illuminated","💡Misc Nonfiction","","Queue Lists",11/6/22,5/30/22,Book,,false
-"The Storyteller","💡Misc Nonfiction","","Queue Lists",11/6/22,4/27/22,Book,,false
-"The True Believer","💡Misc Nonfiction","","Queue Lists",11/6/22,5/5/22,Book,,false
-"The Wizard and the Prophet","💡Misc Nonfiction","","Queue Lists",11/6/22,6/4/22,Book,,false
-"1177 B.C.","📰 History","","Queue Lists",12/3/22,12/3/22,Book,,true
-"Arsenal of Democracy","📰 History","","Queue Lists",11/6/22,8/7/22,Book,,false
-"Freedom's Forge","📰 History","","Queue Lists",11/6/22,8/7/22,Book,,false
-"Fugitives","📰 History","","Queue Lists",12/18/22,12/1/22,Book,,false
-"Great Tales from English History","📰 History","","Queue Lists",12/18/22,12/18/22,Book,,true
-"Leonardo da Vinci","📰 History","","Queue Lists",11/6/22,6/4/22,Book,,false
-"Mao Zedong","📰 History","","Queue Lists",11/6/22,4/27/22,Book,,false
-"PayPal wars","📰 History","","Queue Lists",11/6/22,6/18/22,Book,,false
-"Power broker ","📰 History","","Queue Lists",11/6/22,10/30/22,Book,,false
-"The Man from the Future: The Visionary Life of John von Neumann","📰 History","","Queue Lists",11/6/22,4/27/22,Book,,false
-"The Templars","📰 History","","Queue Lists",11/6/22,5/17/22,Book,,false
-"The Things They Carried","📰 History","","Queue Lists",12/27/22,12/27/22,Book,,true
-"This Is How They Tell Me the World Ends","📰 History","","Queue Lists",11/6/22,6/9/22,Book,,false
-"Under the Banner of Heaven","📰 History","","Queue Lists",11/6/22,4/30/22,Book,,false
-"13 Hours: The Secret Soldiers of Benghazi","📺 Movies & Shows","","Queue Lists",6/2/22,5/29/22,Movie,,false
-"13 Hours: The Secret Soldiers of Benghazi","📺 Movies & Shows","","Queue Lists",11/6/22,11/6/22,Movie,,false
-"Alien Resurrection","📺 Movies & Shows","","Queue Lists",11/6/22,11/6/22,Movie,,false
-"Alien: Covenant","📺 Movies & Shows","","Queue Lists",11/6/22,11/6/22,Movie,,false
-"Bruges","📺 Movies & Shows","","Queue Lists",2/10/23,2/10/23,Movie,,false
-"Elvis","📺 Movies & Shows","","Queue Lists",11/6/22,11/6/22,Movie,,true
-"Introduction to Machine Learning","📺 Movies & Shows","","Queue Lists",5/1/22,5/1/22,TV Show,,false
-"Kill the Irishman","📺 Movies & Shows","","Queue Lists",1/16/23,1/16/23,Movie,,false
-"McCartney 3, 2, 1","📺 Movies & Shows","","Queue Lists",11/24/22,11/9/22,TV Show,,false
-"Seven Psychopaths","📺 Movies & Shows","","Queue Lists",6/2/22,5/23/22,Movie,,false
-"Seven Psychopaths","📺 Movies & Shows","","Queue Lists",11/6/22,2/9/23,Movie,,true
-"Shantaram","📺 Movies & Shows","","Queue Lists",11/6/22,11/6/22,TV Show,,false
-"Star Wars: Andor","📺 Movies & Shows","","Queue Lists",11/6/22,11/6/22,TV Show,,true
-"Superstore","📺 Movies & Shows","","Queue Lists",11/7/22,11/7/22,TV Show,,false
-"Tehran","📺 Movies & Shows","","Queue Lists",6/2/22,5/29/22,TV Show,,false
-"The Chronicles of Riddick","📺 Movies & Shows","","Queue Lists",6/2/22,5/29/22,Movie,,false
-"The Great Dictator","📺 Movies & Shows","","Queue Lists",6/2/22,5/7/22,Movie,,false
-"The Matrix Resurrections","📺 Movies & Shows","","Queue Lists",6/2/22,5/30/22,Movie,,false
-"The Mosquito Coast","📺 Movies & Shows","","Queue Lists",11/6/22,12/20/22,TV Show,,true
-"The Offer","📺 Movies & Shows","","Queue Lists",11/6/22,11/6/22,TV Show,,false
-"The Sinner","📺 Movies & Shows","","Queue Lists",11/6/22,11/22/22,TV Show,,false
-"Total Recall","📺 Movies & Shows","","Queue Lists",11/6/22,11/6/22,Movie,,false
-"Welcome to Wrexham","📺 Movies & Shows","","Queue Lists",12/18/22,12/18/22,TV Show,,false
-"99 bottles of oop","🚊 Software Engineering & Mgmt","","Queue Lists",11/6/22,4/30/22,Book,,false
-"An Elegant Puzzle","🚊 Software Engineering & Mgmt","","Queue Lists",11/6/22,5/2/22,Book,,false
-"Clean ruby ","🚊 Software Engineering & Mgmt","","Queue Lists",11/6/22,4/30/22,Book,,false
-"Confident ruby","🚊 Software Engineering & Mgmt","","Queue Lists",11/6/22,4/30/22,Book,,false
-"Design patterns In Ruby","🚊 Software Engineering & Mgmt","","Queue Lists",4/30/22,4/30/22,Book,,false
-"Patterns of enterprise architecture","🚊 Software Engineering & Mgmt","","Queue Lists",11/6/22,4/30/22,Book,,false
-"Programming phoenix liveview","🚊 Software Engineering & Mgmt","","Queue Lists",12/13/22,12/13/22,Book,,false
-"Rebuilding rails","🚊 Software Engineering & Mgmt","","Queue Lists",11/6/22,4/30/22,Book,,false
-"Refactoring ruby","🚊 Software Engineering & Mgmt","","Queue Lists",11/6/22,4/30/22,Book,,false
-"Ruby science ","🚊 Software Engineering & Mgmt","","Queue Lists",11/6/22,4/30/22,Book,,false
-"The Culture Map","🚊 Software Engineering & Mgmt","","Queue Lists",12/18/22,12/10/22,Book,,false
-"Dragonfly falling","🤓 Sci Fi","","Queue Lists",11/6/22,7/26/22,Book,,false
-"Exhalation","🤓 Sci Fi","","Queue Lists",11/24/22,11/10/22,Book,,false
-"Forbidden the Stars","🤓 Sci Fi","","Queue Lists",11/6/22,6/20/22,Book,,false
-"Nyxia","🤓 Sci Fi","","Queue Lists",12/18/22,12/6/22,Book,,false
-"Qualify","🤓 Sci Fi","","Queue Lists",11/6/22,5/2/22,Book,,false
-"Shadows of Eternity","🤓 Sci Fi","","Queue Lists",11/6/22,6/9/22,Book,,false
-"The Eye of the World","🤓 Sci Fi","","Queue Lists",12/18/22,11/29/22,Book,,false
-"The Hitchhiker's Guide to the Galaxy","🤓 Sci Fi","","Queue Lists",1/16/23,1/16/23,Book,,false
-"The Ministry for the Future","🤓 Sci Fi","","Queue Lists",11/6/22,6/7/22,Book,,false
-"The Years of Rice and Salt","🤓 Sci Fi","","Queue Lists",11/6/22,4/27/22,Book,,false
-"12 Rules for Life","Activity","","Main",11/23/22,11/23/22,Book,, 
-"The Fourth Turning","Activity","","Main",11/22/22,11/22/22,Book,, 
-"The Fourth Turning","Activity","","Main",11/6/22,11/6/22,Book,, 
-"Eon","Activity","","Main",6/14/22,6/14/22,Book,, 
-"12 Rules for Life","Activity","","Main",6/14/22,6/14/22,Book,, 
-"Design patterns In Ruby","Activity","","Main",6/14/22,6/14/22,Book,, 
-"Practical Object-Oriented Design in Ruby: An Agile Primer","Activity","","Main",6/14/22,6/14/22,Book,, 
-"Eon","Activity","","Main",6/1/22,6/1/22,Book,, 
-"12 Rules for Life","Activity","","Main",6/1/22,6/1/22,Book,, 
-"12 Rules for Life","Activity","","Main",5/31/22,5/31/22,Book,, 
-"Ready Player One","Activity","","Main",5/30/22,5/30/22,Movie,, 
-"Eon","Activity","","Main",5/30/22,5/30/22,Book,, 
-"Peopleware","Activity","","Main",5/27/22,5/27/22,Book,, 
-"Practical Object-Oriented Design in Ruby: An Agile Primer","Activity","","Main",5/27/22,5/27/22,Book,, 
-"Design patterns In Ruby","Activity","","Main",5/27/22,5/27/22,Book,, 
-"12 Rules for Life","Activity","","Main",5/25/22,5/25/22,Book,, 
-"All the Shah's Men","Activity","","Main",5/24/22,5/24/22,Book,, 
-"The Becoming: A Post-Apocalyptic Zombie Thriller","Activity","","Main",5/24/22,5/24/22,Book,, 
-"The Becoming: A Post-Apocalyptic Zombie Thriller","Activity","","Main",5/16/22,5/16/22,Book,, 
-"The Becoming: A Post-Apocalyptic Zombie Thriller","Activity","","Main",5/15/22,5/15/22,Book,, 
-"On Quality","Activity","","Main",5/15/22,5/15/22,Book,, 
-"Leadership Is Language","Activity","","Main",5/15/22,5/15/22,Book,, 
-"The great mental models","Activity","","Main",5/15/22,5/15/22,Book,, 
-"Design patterns In Ruby","Activity","","Main",5/7/22,5/7/22,Book,, 
-"The great mental models","Activity","","Main",5/6/22,5/6/22,Book,, 
-"Design patterns In Ruby","Activity","","Main",5/6/22,5/6/22,Book,, 
-"Leadership Is Language","Activity","","Main",5/6/22,5/6/22,Book,, 
-"The great mental models","Activity","","Main",5/3/22,5/3/22,Book,, 
-"Design patterns In Ruby","Activity","","Main",5/1/22,5/1/22,Book,, 
-"Introduction to Machine Learning","Activity","","Main",5/1/22,5/1/22,TV Show,, 
-"The great mental models","Activity","","Main",5/1/22,5/1/22,Book,, 
-"On Quality","Activity","","Main",4/30/22,4/30/22,Book,, 
-"How to Talk So Kids Will Listen & Listen So Kids Will Talk","Activity","","Main",4/28/22,4/28/22,Book,, 
-"The great mental models","Activity","","Main",4/28/22,4/28/22,Book,, 
-"Mindfulness (In Plain English)","Activity","","Main",4/27/22,4/27/22,Book,, 
-"On Quality","Activity","","Main",4/27/22,4/27/22,Book,, 
-"On Quality","Activity","","Main",4/27/22,4/27/22,Book,, 
-"Mindfulness (In Plain English)","Activity","","Main",4/27/22,4/27/22,Book,, 
-"Metamuse","Activity","","Main",4/27/22,2/17/23,Podcast,, 
+Item Title,List Name,List Description,Group,Date Added,Date Edited,Item Type,Notes,Pinned,
+All the Shah's Men,Abandoned / Disliked,,Completed Lists,11/22/22,11/6/22,Book,Abandoned for now,FALSE,
+Cadillac Desert,Abandoned / Disliked,,Completed Lists,11/6/22,6/8/22,Book,,FALSE,
+Don Vito,Abandoned / Disliked,,Completed Lists,11/22/22,11/22/22,Book,,FALSE,
+Eon,Abandoned / Disliked,,Completed Lists,11/6/22,11/6/22,Book,Abandoned,FALSE,
+Leadership Is Language,Abandoned / Disliked,,Completed Lists,11/6/22,11/6/22,Book,Disappointing,FALSE,
+On China,Abandoned / Disliked,,Completed Lists,11/22/22,11/6/22,Book,Abandoned for now,FALSE,
+Peopleware,Abandoned / Disliked,,Completed Lists,11/6/22,11/6/22,Book,Can’t finish it,FALSE,
+Santorini,Abandoned / Disliked,,Completed Lists,12/27/22,12/27/22,Book,,FALSE,
+Ski walkers at the pentagon,Abandoned / Disliked,,Completed Lists,12/18/22,12/18/22,Book,,FALSE,
+The Becoming: A Post-Apocalyptic Zombie Thriller,Abandoned / Disliked,,Completed Lists,11/6/22,11/6/22,Book,Abandoned,FALSE,
+The Fifth Season,Abandoned / Disliked,,Completed Lists,11/6/22,6/4/22,Book,,FALSE,
+The Violin Conspiracy,Abandoned / Disliked,,Completed Lists,11/6/22,11/6/22,Book,Abandoned,FALSE,
+Man's Search for Meaning,Books: Liked,,Completed Lists,12/17/22,12/18/22,Book,First part was great. Psychology part was boring and didn’t finish it.,FALSE,
+Practical Object-Oriented Design in Ruby: An Agile Primer,Books: Liked,,Completed Lists,11/6/22,5/27/22,Book,,FALSE,
+Sum vii,Books: Liked,,Completed Lists,11/6/22,11/6/22,Book,Read,FALSE,
+The Fourth Turning,Books: Liked,,Completed Lists,11/22/22,11/22/22,Book,,FALSE,
+The Message of the Sphinx,Books: Liked,,Completed Lists,11/22/22,11/6/22,Book,Read and loved! Need another,FALSE,
+The great mental models,Books: Liked,,Completed Lists,11/6/22,11/6/22,Book,Read, need volume 2 next!,FALSE
+To Sleep in a Sea of Stars,Books: Liked,,Completed Lists,11/6/22,11/6/22,Book,Read,FALSE,
+Zen in the Art of Archery,Books: Liked,,Completed Lists,11/6/22,4/30/22,Book,,FALSE,
+Ancient Apocalypse,Movies & Shows: Liked,,Completed Lists,12/2/22,12/2/22,TV Show,,FALSE,
+Obi-Wan Kenobi,Movies & Shows: Liked,,Completed Lists,11/22/22,11/6/22,TV Show,Great!,FALSE,
+Ready Player One,Movies & Shows: Liked,,Completed Lists,11/22/22,11/6/22,Movie,Great!,FALSE,
+The Book of Boba Fett,Movies & Shows: Liked,,Completed Lists,11/22/22,11/6/22,TV Show,Great!,FALSE,
+1491 (Second Edition),The Pile,,No Group,12/23/22,12/23/22,Book,,FALSE,
+Cleopatra,The Pile,,No Group,1/23/23,1/23/23,Book,,FALSE,
+Conversations with René Girard,The Pile,,No Group,12/26/22,12/26/22,Book,,FALSE,
+Exploring Requirements 1: Quality Before Design,The Pile,,No Group,2/6/23,2/6/23,Book,,FALSE,
+Fairy Tale,The Pile,,No Group,1/15/23,1/15/23,Book,,FALSE,
+Four Thousand Weeks,The Pile,,No Group,2/2/23,2/2/23,Book,,FALSE,
+Generating Business Referrals Without Asking,The Pile,,No Group,1/30/23,1/30/23,Book,,FALSE,
+I Never Thought of It That Way,The Pile,,No Group,12/26/22,12/26/22,Book,,FALSE,
+Joker,The Pile,,No Group,12/27/22,12/27/22,Movie,,FALSE,
+Spirit Island,The Pile,,No Group,1/16/23,1/16/23,Board Game,,FALSE,
+The Art of Learning,The Pile,,No Group,12/20/22,12/20/22,Book,,FALSE,
+The Basic Laws of Human Stupidity,The Pile,,No Group,2/12/23,2/12/23,Book,,FALSE,
+The Box,The Pile,,No Group,1/5/23,1/5/23,Book,,FALSE,
+The Dictator's Learning Curve,The Pile,,No Group,12/26/22,12/26/22,Book,,FALSE,
+The Five Dysfunctions of a Team,The Pile,,No Group,12/27/22,12/27/22,Book,,FALSE,
+The Nazi Conscience,The Pile,,No Group,1/19/23,1/19/23,Book,,FALSE,
+The Order of Time,The Pile,,No Group,1/5/23,1/5/23,Book,,FALSE,
+The Whole-Brain Child,The Pile,,No Group,1/19/23,1/19/23,Book,,FALSE,
+Thinking in Systems: International Bestseller,The Pile,,No Group,2/6/23,2/6/23,Book,,FALSE,
+Bewilderment: A Novel,🏖 Misc Fiction,,Queue Lists,11/6/22,4/27/22,Book,,FALSE,
+Devolution,🏖 Misc Fiction,,Queue Lists,11/6/22,6/4/22,Book,,FALSE,
+LaserWriter II,🏖 Misc Fiction,,Queue Lists,11/6/22,10/30/22,Book,,FALSE,
+Light From Uncommon Stars,🏖 Misc Fiction,,Queue Lists,11/6/22,5/17/22,Book,Reviewed by Dylan on Goodreads from UIUC,FALSE,
+Savage Son,🏖 Misc Fiction,,Queue Lists,12/18/22,12/18/22,Book,,FALSE,
+The Clan of the Cave Bear (with Bonus Content),🏖 Misc Fiction,,Queue Lists,11/6/22,6/30/22,Book,,FALSE,
+The Terminal List,🏖 Misc Fiction,,Queue Lists,12/18/22,12/18/22,Book,,FALSE,
+True Believer,🏖 Misc Fiction,,Queue Lists,12/18/22,12/18/22,Book,,FALSE,
+12 Rules for Life,💡Misc Nonfiction,,Queue Lists,5/24/22,11/6/22,Book,,TRUE,
+Animal Farm,💡Misc Nonfiction,,Queue Lists,11/6/22,4/29/22,Book,,FALSE,
+Atomic Habits,💡Misc Nonfiction,,Queue Lists,12/18/22,12/9/22,Book,,FALSE,
+Birth and Death of Meaning,💡Misc Nonfiction,,Queue Lists,12/18/22,12/6/22,Book,,FALSE,
+Border Hacker,💡Misc Nonfiction,,Queue Lists,11/6/22,7/3/22,Book,,FALSE,
+Even ceos get fires,💡Misc Nonfiction,,Queue Lists,11/6/22,6/8/22,Book,,FALSE,
+Flying Blind,💡Misc Nonfiction,,Queue Lists,11/6/22,10/16/22,Book,,FALSE,
+Four Thousand Weeks,💡Misc Nonfiction,,Queue Lists,11/6/22,6/9/22,Book,,FALSE,
+Free Range Kids By Lenore Skenazy,💡Misc Nonfiction,,Queue Lists,11/6/22,7/3/22,Book,,FALSE,
+Hamlets mill,💡Misc Nonfiction,,Queue Lists,12/18/22,11/30/22,Book,,FALSE,
+How Buildings Learn,💡Misc Nonfiction,,Queue Lists,11/6/22,6/24/22,Book,,FALSE,
+How to Talk So Kids Will Listen & Listen So Kids Will Talk,💡Misc Nonfiction,,Queue Lists,4/27/22,11/6/22,Book,,FALSE,
+Hunting Together,💡Misc Nonfiction,,Queue Lists,12/17/22,12/17/22,Book,,TRUE,
+Impro,💡Misc Nonfiction,,Queue Lists,12/18/22,12/18/22,Book,,TRUE,
+Mindfulness (In Plain English),💡Misc Nonfiction,,Queue Lists,4/27/22,11/6/22,Book,,FALSE,
+Naïve. Super,💡Misc Nonfiction,,Queue Lists,12/18/22,12/6/22,Book,,FALSE,
+On Quality,💡Misc Nonfiction,,Queue Lists,4/27/22,4/27/22,Book,,FALSE,
+Sons of Wichita,💡Misc Nonfiction,,Queue Lists,12/18/22,12/18/22,Book,,FALSE,
+Story,💡Misc Nonfiction,,Queue Lists,11/6/22,6/16/22,Book,,FALSE,
+The Alter Ego Effect,💡Misc Nonfiction,,Queue Lists,11/6/22,5/30/22,Book,,FALSE,
+The Constitution of Knowledge,💡Misc Nonfiction,,Queue Lists,11/24/22,11/24/22,Book,,FALSE,
+The Daily Stoic,💡Misc Nonfiction,,Queue Lists,12/26/22,12/26/22,Book,,TRUE,
+The Dictator's Handbook,💡Misc Nonfiction,,Queue Lists,11/24/22,11/9/22,Book,,FALSE,
+The Future and Its Enemies,💡Misc Nonfiction,,Queue Lists,11/6/22,6/5/22,Book,,FALSE,
+"The Great Mental Models Volume 2: Physics, Chemistry and Biology",💡Misc Nonfiction,,Queue Lists,11/6/22,5/15/22,Book,,FALSE,
+The Great Mental Models Volume 3: Systems and Mathematics,💡Misc Nonfiction,,Queue Lists,11/6/22,5/15/22,Book,,FALSE,
+The Greatest Beer Run Ever,💡Misc Nonfiction,,Queue Lists,12/18/22,11/29/22,Book,,FALSE,
+The Internet Is Not What You Think It Is,💡Misc Nonfiction,,Queue Lists,11/6/22,5/5/22,Book,,FALSE,
+The Machiavellians,💡Misc Nonfiction,,Queue Lists,11/6/22,6/3/22,Book,,FALSE,
+The Mind Illuminated,💡Misc Nonfiction,,Queue Lists,11/6/22,5/30/22,Book,,FALSE,
+The Storyteller,💡Misc Nonfiction,,Queue Lists,11/6/22,4/27/22,Book,,FALSE,
+The True Believer,💡Misc Nonfiction,,Queue Lists,11/6/22,5/5/22,Book,,FALSE,
+The Wizard and the Prophet,💡Misc Nonfiction,,Queue Lists,11/6/22,6/4/22,Book,,FALSE,
+1177 B.C.,📰 History,,Queue Lists,12/3/22,12/3/22,Book,,TRUE,
+Arsenal of Democracy,📰 History,,Queue Lists,11/6/22,8/7/22,Book,,FALSE,
+Freedom's Forge,📰 History,,Queue Lists,11/6/22,8/7/22,Book,,FALSE,
+Fugitives,📰 History,,Queue Lists,12/18/22,12/1/22,Book,,FALSE,
+Great Tales from English History,📰 History,,Queue Lists,12/18/22,12/18/22,Book,,TRUE,
+Leonardo da Vinci,📰 History,,Queue Lists,11/6/22,6/4/22,Book,,FALSE,
+Mao Zedong,📰 History,,Queue Lists,11/6/22,4/27/22,Book,,FALSE,
+PayPal wars,📰 History,,Queue Lists,11/6/22,6/18/22,Book,,FALSE,
+Power broker ,📰 History,,Queue Lists,11/6/22,10/30/22,Book,,FALSE,
+The Man from the Future: The Visionary Life of John von Neumann,📰 History,,Queue Lists,11/6/22,4/27/22,Book,,FALSE,
+The Templars,📰 History,,Queue Lists,11/6/22,5/17/22,Book,,FALSE,
+The Things They Carried,📰 History,,Queue Lists,12/27/22,12/27/22,Book,,TRUE,
+This Is How They Tell Me the World Ends,📰 History,,Queue Lists,11/6/22,6/9/22,Book,,FALSE,
+Under the Banner of Heaven,📰 History,,Queue Lists,11/6/22,4/30/22,Book,,FALSE,
+13 Hours: The Secret Soldiers of Benghazi,📺 Movies & Shows,,Queue Lists,6/2/22,5/29/22,Movie,,FALSE,
+13 Hours: The Secret Soldiers of Benghazi,📺 Movies & Shows,,Queue Lists,11/6/22,11/6/22,Movie,,FALSE,
+Alien Resurrection,📺 Movies & Shows,,Queue Lists,11/6/22,11/6/22,Movie,,FALSE,
+Alien: Covenant,📺 Movies & Shows,,Queue Lists,11/6/22,11/6/22,Movie,,FALSE,
+Bruges,📺 Movies & Shows,,Queue Lists,2/10/23,2/10/23,Movie,,FALSE,
+Elvis,📺 Movies & Shows,,Queue Lists,11/6/22,11/6/22,Movie,,TRUE,
+Introduction to Machine Learning,📺 Movies & Shows,,Queue Lists,5/1/22,5/1/22,TV Show,,FALSE,
+Kill the Irishman,📺 Movies & Shows,,Queue Lists,1/16/23,1/16/23,Movie,,FALSE,
+"McCartney 3, 2, 1",📺 Movies & Shows,,Queue Lists,11/24/22,11/9/22,TV Show,,FALSE,
+Seven Psychopaths,📺 Movies & Shows,,Queue Lists,6/2/22,5/23/22,Movie,,FALSE,
+Seven Psychopaths,📺 Movies & Shows,,Queue Lists,11/6/22,2/9/23,Movie,,TRUE,
+Shantaram,📺 Movies & Shows,,Queue Lists,11/6/22,11/6/22,TV Show,,FALSE,
+Star Wars: Andor,📺 Movies & Shows,,Queue Lists,11/6/22,11/6/22,TV Show,,TRUE,
+Superstore,📺 Movies & Shows,,Queue Lists,11/7/22,11/7/22,TV Show,,FALSE,
+Tehran,📺 Movies & Shows,,Queue Lists,6/2/22,5/29/22,TV Show,,FALSE,
+The Chronicles of Riddick,📺 Movies & Shows,,Queue Lists,6/2/22,5/29/22,Movie,,FALSE,
+The Great Dictator,📺 Movies & Shows,,Queue Lists,6/2/22,5/7/22,Movie,,FALSE,
+The Matrix Resurrections,📺 Movies & Shows,,Queue Lists,6/2/22,5/30/22,Movie,,FALSE,
+The Mosquito Coast,📺 Movies & Shows,,Queue Lists,11/6/22,12/20/22,TV Show,,TRUE,
+The Offer,📺 Movies & Shows,,Queue Lists,11/6/22,11/6/22,TV Show,,FALSE,
+The Sinner,📺 Movies & Shows,,Queue Lists,11/6/22,11/22/22,TV Show,,FALSE,
+Total Recall,📺 Movies & Shows,,Queue Lists,11/6/22,11/6/22,Movie,,FALSE,
+Welcome to Wrexham,📺 Movies & Shows,,Queue Lists,12/18/22,12/18/22,TV Show,,FALSE,
+99 bottles of oop,🚊 Software Engineering & Mgmt,,Queue Lists,11/6/22,4/30/22,Book,,FALSE,
+An Elegant Puzzle,🚊 Software Engineering & Mgmt,,Queue Lists,11/6/22,5/2/22,Book,,FALSE,
+Clean ruby ,🚊 Software Engineering & Mgmt,,Queue Lists,11/6/22,4/30/22,Book,,FALSE,
+Confident ruby,🚊 Software Engineering & Mgmt,,Queue Lists,11/6/22,4/30/22,Book,,FALSE,
+Design patterns In Ruby,🚊 Software Engineering & Mgmt,,Queue Lists,4/30/22,4/30/22,Book,,FALSE,
+Patterns of enterprise architecture,🚊 Software Engineering & Mgmt,,Queue Lists,11/6/22,4/30/22,Book,,FALSE,
+Programming phoenix liveview,🚊 Software Engineering & Mgmt,,Queue Lists,12/13/22,12/13/22,Book,,FALSE,
+Rebuilding rails,🚊 Software Engineering & Mgmt,,Queue Lists,11/6/22,4/30/22,Book,,FALSE,
+Refactoring ruby,🚊 Software Engineering & Mgmt,,Queue Lists,11/6/22,4/30/22,Book,,FALSE,
+Ruby science ,🚊 Software Engineering & Mgmt,,Queue Lists,11/6/22,4/30/22,Book,,FALSE,
+The Culture Map,🚊 Software Engineering & Mgmt,,Queue Lists,12/18/22,12/10/22,Book,,FALSE,
+Dragonfly falling,🤓 Sci Fi,,Queue Lists,11/6/22,7/26/22,Book,,FALSE,
+Exhalation,🤓 Sci Fi,,Queue Lists,11/24/22,11/10/22,Book,,FALSE,
+Forbidden the Stars,🤓 Sci Fi,,Queue Lists,11/6/22,6/20/22,Book,,FALSE,
+Nyxia,🤓 Sci Fi,,Queue Lists,12/18/22,12/6/22,Book,,FALSE,
+Qualify,🤓 Sci Fi,,Queue Lists,11/6/22,5/2/22,Book,,FALSE,
+Shadows of Eternity,🤓 Sci Fi,,Queue Lists,11/6/22,6/9/22,Book,,FALSE,
+The Eye of the World,🤓 Sci Fi,,Queue Lists,12/18/22,11/29/22,Book,,FALSE,
+The Hitchhiker's Guide to the Galaxy,🤓 Sci Fi,,Queue Lists,1/16/23,1/16/23,Book,,FALSE,
+The Ministry for the Future,🤓 Sci Fi,,Queue Lists,11/6/22,6/7/22,Book,,FALSE,
+The Years of Rice and Salt,🤓 Sci Fi,,Queue Lists,11/6/22,4/27/22,Book,,FALSE,
