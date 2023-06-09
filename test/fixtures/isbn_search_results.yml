@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: isbn_search_results
+#
+#  id         :bigint           not null, primary key
+#  authors    :string
+#  image_url  :string
+#  isbn10     :string
+#  isbn13     :string
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  book_id    :integer
+#
+
+one:
+  book_id: 1
+  image_url: MyString
+  title: MyString
+  authors: MyString
+  isbn13: MyString
+  isbn10: MyString
+
+two:
+  book_id: 1
+  image_url: MyString
+  title: MyString
+  authors: MyString
+  isbn13: MyString
+  isbn10: MyString

@@ -4,9 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 gem "annotate"
+gem "aws-sdk-s3", require: false
 gem "devise"
 gem "image_processing", "~> 1.2"
 gem "importmap-rails"
+gem "isbndb-ruby"
 gem "jbuilder"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
@@ -24,6 +26,8 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "web-console"
 end
 

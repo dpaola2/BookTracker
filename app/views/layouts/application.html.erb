@@ -15,16 +15,18 @@
     <div class="container">
       <%= render "layouts/navbar" %>
 
-      <% if alert %>
-        <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">
-          <%= alert %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <% elsif notice %>
-        <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
-          <%= notice %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+      <%= turbo_frame_tag "flash" do %>
+        <% if alert %>
+          <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+            <%= alert %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% elsif notice %>
+          <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
+            <%= notice %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% end %>
       <% end %>
 
       <%= yield %>

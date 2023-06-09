@@ -12,4 +12,5 @@
 #
 class Book < ApplicationRecord
   belongs_to :shelf
+  has_many :isbn_search_results, dependent: :destroy
 end

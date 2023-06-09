@@ -11,3 +11,22 @@
 <div class="mb-3">
   <%= link_to "Back to books", books_path %>
 </div>
+
+<div class="d-grid mb-3">
+  <%= link_to "Redo ISBN search", book_isbn_searches_path(@book), data: { turbo_method: :post }, class: "btn btn-success" %>
+</div>
+
+<hr />
+
+<ul class="list-group">
+  <% @book.isbn_search_results.map do |isbn_search_result| %>
+    <li class="list-group-item">
+      <%= image_tag isbn_search_result.image_url, class: "img-thumbnail", style: "width: 150px;" %>
+      <h3><%= isbn_search_result.title %></h3>
+      <strong>Author:</strong><%= isbn_search_result.authors %>
+      <div class="d-grid">
+        <%= link_to "This is it", book_isbn_search_assignments_path(@book, isbn_search_result), data: { turbo_method: :post }, class: "btn btn-primary" %>
+      </div>
+    </li>
+  <% end %>
+</ul>
