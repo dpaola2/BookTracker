@@ -1,5 +1,9 @@
 <h1>Shelves</h1>
 
+<div class="d-grid mb-3">
+  <%= link_to "New shelf", new_shelf_path, class: "btn btn-primary" %>
+</div>
+
 <div id="shelves" class="list-group">
   <% @shelves.each do |shelf| %>
     <%= link_to shelf_path(shelf), class: "list-group-item list-group-item-action" do %>
@@ -8,5 +12,3 @@
     <% end %>
   <% end %>
 </div>
-
-<%= link_to "New shelf", new_shelf_path %>
