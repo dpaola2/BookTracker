@@ -4,7 +4,7 @@ class ShelvesController < ApplicationController
 
   # GET /shelves or /shelves.json
   def index
-    @shelves = Shelf.all.sort_by { |shelf| shelf.books.count }.reverse
+    @shelves = current_user.shelves.all.sort_by { |shelf| shelf.books.count }.reverse
   end
 
   # GET /shelves/1 or /shelves/1.json
@@ -22,7 +22,7 @@ class ShelvesController < ApplicationController
 
   # POST /shelves or /shelves.json
   def create
-    @shelf = Shelf.new(shelf_params)
+    @shelf = current_user.shelves.new(shelf_params)
 
     respond_to do |format|
       if @shelf.save
@@ -61,7 +61,7 @@ class ShelvesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shelf
-      @shelf = Shelf.find(params[:id])
+      @shelf = current_user.shelves.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
