@@ -6,15 +6,19 @@ class IsbnSearchesController < ApplicationController
     @book.isbn_search_results.destroy_all
 
     client = ISBNdb::ApiClient.new(api_key: ENV['ISBNDB_API_KEY'])
-    isbn_results = client.book.batch("#{ @book['title'] } #{ @book['author'] }")[:books]
-    isbn_results.map do |isbn_result|
-      @book.isbn_search_results.create!(
-        isbn13: isbn_result[:isbn13],
-        isbn10: isbn_result[:isbn10],
-        title: isbn_result[:title],
-        authors: isbn_result[:authors].join(","),
-        image_url: isbn_result[:image]
-      )
+    begin
+      isbn_results = client.book.batch("#{ @book['title'] } #{ @book['author'] }")[:books]
+      isbn_results.map do |isbn_result|
+        @book.isbn_search_results.create!(
+          isbn13: isbn_result[:isbn13],
+          isbn10: isbn_result[:isbn10],
+          title: isbn_result[:title],
+          authors: isbn_result[:authors].join(","),
+          image_url: isbn_result[:image]
+        )
+      end
+    rescue ISBNdb::RequestError => e
+      flash[:alert] = "ISBNdb API error: #{ e.message }"
     end
 
     redirect_to book_url(@book)

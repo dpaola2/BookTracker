@@ -9,6 +9,14 @@
 </div>
 
 <div class="d-grid mb-3">
+  <% if @book.isbn.present? %>
+    <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?isbn=#{ @book.isbn }&st=xl&ac=qr", class: "btn btn-primary", target: "_blank" %>
+  <% else %>
+    <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?author=#{ @book.author }&title=#{ @book.title }&st=xl&ac=qr", class: "btn btn-primary", target: "_blank" %>
+  <% end %>
+</div>
+
+<div class="d-grid mb-3">
   <%= link_to "Redo ISBN search", book_isbn_searches_path(@book), data: { turbo_method: :post }, class: "btn btn-success" %>
 </div>
 
