@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'defaults/create'
   devise_for :users
   
   resources :books do
@@ -7,7 +8,9 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :shelves
+  resources :shelves do
+    resources :defaults, only: [:create]
+  end
   
   root "shelves#index"
 end

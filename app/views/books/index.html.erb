@@ -1,28 +1,7 @@
 <h1>Books</h1>
 
-<div class="d-grid mb-3">
-  <%= link_to "📚 New book", new_book_path, class: "btn btn-primary" %>
-</div>
-
 <div id="books" class="list-group mt-3">
   <% @books.each do |book| %>
-    <%= link_to book_path(book), class: "list-group-item list-group-item-action" do %>
-      <h3><%= book.title %></h3>
-      <strong>Author:</strong><% if book.author.present? %>
-        <%= book.author %>
-      <% else %>
-        <em>None</em>
-      <% end %>
-      <br />
-      <strong>Shelf:</strong><% if book.shelf.present? %>
-        <%= book.shelf.name %>
-      <% else %>
-        <em>None</em>
-      <% end %>
-      <br />
-      <% if !book.isbn.present? %>
-        <span class="badge bg-danger">No ISBN</span>
-      <% end %>
-    <% end %>
+    <%= render "books/list_item", book: book %>
   <% end %>
 </div>

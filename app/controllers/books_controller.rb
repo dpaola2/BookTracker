@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = current_user.books.all
+    @books = current_user.books.order(updated_at: :desc).all
   end
 
   # GET /books/1 or /books/1.json
@@ -66,6 +66,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :author, :isbn, :shelf_id)
+      params.require(:book).permit(:title, :author, :isbn, :shelf_id, :image)
     end
 end

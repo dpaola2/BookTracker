@@ -1,10 +1,6 @@
 <h1>Shelves</h1>
 
 <div class="d-grid mb-3">
-  <%= link_to "📚 New book", new_book_path, class: "btn btn-primary" %>
-</div>
-
-<div class="d-grid mb-3">
   <%= link_to "🗂️ New shelf", new_shelf_path, class: "btn btn-primary" %>
 </div>
 
@@ -12,6 +8,10 @@
   <% @shelves.each do |shelf| %>
     <%= link_to shelf_path(shelf), class: "list-group-item list-group-item-action" do %>
       <h3><%= shelf.name %></h3>
+      <% if current_user.default_shelf == shelf %>
+        <span class="badge bg-success">Default</span>
+        <br />
+      <% end %>
       <%= shelf.books.count %> books
     <% end %>
   <% end %>

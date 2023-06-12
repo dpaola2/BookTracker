@@ -18,7 +18,7 @@
       <p>
         <strong>Shelf:</strong>
         <% if book.shelf.present? %>
-          <%= book.shelf.name %>
+          <%= link_to book.shelf.name, shelf_path(book.shelf) %>
         <% else %>
           <em>None</em>
         <% end %>

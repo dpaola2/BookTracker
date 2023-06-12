@@ -10,6 +10,7 @@
 #  reset_password_token   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  shelf_id               :integer
 #
 # Indexes
 #

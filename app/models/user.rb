@@ -10,6 +10,7 @@
 #  reset_password_token   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  shelf_id               :integer
 #
 # Indexes
 #
@@ -23,5 +24,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :books
+  belongs_to :default_shelf, foreign_key: :shelf_id, class_name: "Shelf", optional: true
   has_many :shelves
+  
 end

@@ -1,20 +1,33 @@
 <div id="<%= dom_id shelf %>">
-  <h2><%= shelf.name %></h2>
+  <div class="mb-3">
+    <%= link_to "Back to shelves", shelves_path %>
+  </div>
+
+  <h2 class="mb-3">Shelf: <%= shelf.name %></h2>
+
+  <% if current_user.default_shelf == shelf %>
+    <span class="badge bg-success mb-3">Default</span>
+  <% end %>
+
+  <div class="d-grid mb-3">
+    <%= link_to "Edit this shelf", edit_shelf_path(shelf), class: "btn btn-info" %>
+  </div>
+
+  <div class="d-grid mb-3">
+    <% if current_user.default_shelf == shelf %>
+      <%= link_to "Set as Default", shelf_defaults_path(shelf), data: { turbo_method: :post }, class: "btn btn-success disabled" %>
+    <% else %>
+      <%= link_to "Set as Default", shelf_defaults_path(shelf), data: { turbo_method: :post }, class: "btn btn-success" %>
+    <% end %>
+  </div>
+
+  <div class="d-grid mb-3">
+    <%= link_to "Destroy this shelf", shelf, data: { turbo_method: :delete }, class: "btn btn-danger" %>
+  </div>
 
   <ul class="list-group">
-    <% shelf.books.all.map do |book| %>
-      <%= link_to book_path(book), class: "list-group-item list-group-item-action" do %>
-        <h3><%= book.title %></h3>
-        <strong>Author:</strong><% if book.author.present? %>
-          <%= book.author %>
-        <% else %>
-          <em>None</em>
-        <% end %>
-        
-        <% if !book.isbn.present? %>
-          <span class="badge bg-danger">No ISBN</span>
-        <% end %>
-      <% end %>
+    <% shelf.books.order(updated_at: :desc).all.map do |book| %>
+      <%= render "books/list_item", book: book %>
     <% end %>
   </ul>
 
