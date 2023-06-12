@@ -28,7 +28,7 @@
 
   <div class="mb-3">
     <%= form.label :shelf_id, "Shelf", class: "form-label" %>
-    <%= form.select :shelf_id, options_for_select( Shelf.all.map { |shelf| [shelf.name, shelf.id] } ), {}, class: "form-select" %>
+    <%= form.select :shelf_id, options_for_select( shelves_for_select(current_user), selected: book.shelf_id ), {  }, class: "form-select" %>
   </div>
 
   <div class="mb-3 d-grid">

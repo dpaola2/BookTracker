@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   
   resources :shelves
   
-  root "books#index"
+  root "shelves#index"
 end
