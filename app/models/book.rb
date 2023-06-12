@@ -12,6 +12,8 @@
 #  user_id    :integer
 #
 class Book < ApplicationRecord
+  validates :user_id, presence: true
+
   belongs_to :shelf
   belongs_to :user
   has_many :isbn_search_results, dependent: :destroy

@@ -4,6 +4,7 @@ class AddForeignKeysToBooksAndShelves < ActiveRecord::Migration[7.0]
     add_column :shelves, :user_id, :integer
 
     Book.update_all(user_id: User.first.id)
+    Shelf.update_all(user_id: User.first.id)
   end
 
   def down
