@@ -19,4 +19,5 @@ class Book < ApplicationRecord
   has_many :isbn_search_results, dependent: :destroy
 
   has_one_attached :image
+  has_rich_text :comments
 end

@@ -1,5 +1,13 @@
 <%= render @book %>
 
+<%= form_with(model: @book) do |f| %>
+  <%= f.rich_text_area :comments %>
+
+  <div class="d-grid my-3">
+    <%= f.submit "Update Comments", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
 <div class="d-grid mb-3">
   <%= link_to "Edit this book", edit_book_path(@book), class: "btn btn-info" %>
 </div>
