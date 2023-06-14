@@ -1,28 +1,19 @@
 <div id="<%= dom_id book %>">
-  <div class="row mt-3">
-    <div class="col">
-      <% if book.image.attached? %>
-        <%= image_tag book.image, class: "img-thumbnail", style: "width: 150px;" %>
-      <% end %>
-      <h3><%= book.title %></h3>
-      <p>
-        <strong>Author:</strong>
-        <%= book.author %>
-      </p>
-
-      <p>
-        <strong>Isbn:</strong>
-        <%= book.isbn %>
-      </p>
-
-      <p>
-        <strong>Shelf:</strong>
-        <% if book.shelf.present? %>
-          <%= link_to book.shelf.name, shelf_path(book.shelf) %>
-        <% else %>
-          <em>None</em>
+  <div class="card mb-3 img-fluid">
+    <div class="row g-0">
+      <div class="col-4">
+        <% if book.image.attached? %>
+          <%= image_tag book.image, class: "img-fluid rounded-start" %>
         <% end %>
-      </p>
+      </div>
+      <div class="col-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= book.title %></h5>
+          <p class="card-text"><%= book.author %></p>
+          <p class="card-text"><small class="text-body-secondary"><%= book.isbn %></small></p>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>

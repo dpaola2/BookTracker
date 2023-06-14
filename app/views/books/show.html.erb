@@ -1,36 +1,79 @@
 <%= render @book %>
 
-<div class="d-grid mb-3">
-  <%= link_to "Edit this book", edit_book_path(@book), class: "btn btn-info" %>
-</div>
+<%= form_with(model: @book) do |f| %>
+  <div class="mb-3">
+    <%= f.label :shelf_id, "Shelf", class: "form-label" %>
+    <%= f.select :shelf_id, options_for_select( shelves_for_select(current_user), selected: @book.shelf_id || current_user.default_shelf.id ), {  }, class: "form-select" %>
+  </div>
 
-<div class="d-grid mb-3">
-  <%= link_to "Destroy this book", @book, data: { turbo_method: :delete }, class: "btn btn-danger" %>
-</div>
+  <div class="d-grid my-3">
+    <%= f.submit "Move to shelf", class: "btn btn-primary" %>
+  </div>
+<% end %>
 
-<div class="d-grid mb-3">
-  <% if @book.isbn.present? %>
-    <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?isbn=#{ @book.isbn }&st=xl&ac=qr", class: "btn btn-primary", target: "_blank" %>
-  <% else %>
-    <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?author=#{ @book.author }&title=#{ @book.title }&st=xl&ac=qr", class: "btn btn-primary", target: "_blank" %>
-  <% end %>
-</div>
+<hr />
 
-<div class="d-grid mb-3">
-  <%= link_to "Redo ISBN search", book_isbn_searches_path(@book), data: { turbo_method: :post }, class: "btn btn-success" %>
+<%= form_with(model: @book) do |f| %>
+  <%= f.rich_text_area :comments %>
+
+  <div class="d-grid my-3">
+    <%= f.submit "Update Comments", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<hr />
+
+<div class="dropdown d-grid mb-3">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    More Actions
+  </button>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to "Edit this book", edit_book_path(@book), class: "dropdown-item" %>
+    </li>
+    <li>
+      <%= link_to "Destroy this book", @book, data: { turbo_method: :delete }, class: "dropdown-item" %>
+    </li>
+    <li>
+      <% if @book.isbn.present? %>
+        <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?isbn=#{ @book.isbn }&st=xl&ac=qr", class: "dropdown-item", target: "_blank" %>
+      <% else %>
+        <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?author=#{ @book.author }&title=#{ @book.title }&st=xl&ac=qr", class: "dropdown-item", target: "_blank" %>
+      <% end %>
+    </li>
+  </ul>
 </div>
 
 <hr />
 
-<ul class="list-group">
-  <% @book.isbn_search_results.map do |isbn_search_result| %>
-    <li class="list-group-item">
-      <%= image_tag isbn_search_result.image_url, class: "img-thumbnail", style: "width: 150px;" %>
-      <h3><%= isbn_search_result.title %></h3>
-      <strong>Author:</strong><%= isbn_search_result.authors %>
-      <div class="d-grid">
-        <%= link_to "This is it", book_isbn_search_assignments_path(@book, isbn_search_result), data: { turbo_method: :post }, class: "btn btn-primary" %>
+<div class="d-grid mb-3 gap-2">
+  <%= link_to "Redo ISBN search", book_isbn_searches_path(@book), data: { turbo_method: :post }, class: "btn btn-success" %>
+  <%= link_to "Clear", "#", class: "btn btn-danger" %>
+</div>
+
+<div class="accordion mb-5" id="isbnAccordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button <%= expand_accordion_class_button(@book) %>" type="button" data-bs-toggle="collapse" data-bs-target="#isbnResults" aria-expanded="true" aria-controls="isbnResults">
+        ISBN Search Results
+      </button>
+    </h2>
+    <div id="isbnResults" class="accordion-collapse collapse <%= expand_accordion_class(@book) %>" data-bs-parent="#isbnAccordion">
+      <div class="accordion-body">
+
+        <ul class="list-group">
+          <% @book.isbn_search_results.map do |isbn_search_result| %>
+            <li class="list-group-item">
+              <%= image_tag isbn_search_result.image_url, class: "img-thumbnail", style: "width: 150px;" %>
+              <h3><%= isbn_search_result.title %></h3>
+              <strong>Author:</strong><%= isbn_search_result.authors %>
+              <div class="d-grid">
+                <%= link_to "This is it", book_isbn_search_assignments_path(@book, isbn_search_result), data: { turbo_method: :post }, class: "btn btn-primary" %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
       </div>
-    </li>
-  <% end %>
-</ul>
+    </div>
+  </div>
+</div>
