@@ -1,8 +1,13 @@
 <%= render @book %>
 
+<div class="d-grid my-3">
+  <%= link_to "Edit this book", edit_book_path(@book), class: "btn btn-warning" %>
+</div>
+
+
 <%= form_with(model: @book) do |f| %>
   <div class="mb-3">
-    <%= f.label :shelf_id, "Shelf", class: "form-label" %>
+    <%= f.label :shelf_id, "Move to a new shelf:", class: "form-label" %>
     <%= f.select :shelf_id, options_for_select( shelves_for_select(current_user), selected: @book.shelf_id || current_user.default_shelf.id ), {  }, class: "form-select" %>
   </div>
 
@@ -23,32 +28,19 @@
 
 <hr />
 
-<div class="dropdown d-grid mb-3">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    More Actions
-  </button>
-  <ul class="dropdown-menu">
-    <li>
-      <%= link_to "Edit this book", edit_book_path(@book), class: "dropdown-item" %>
-    </li>
-    <li>
-      <%= link_to "Destroy this book", @book, data: { turbo_method: :delete }, class: "dropdown-item" %>
-    </li>
-    <li>
-      <% if @book.isbn.present? %>
-        <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?isbn=#{ @book.isbn }&st=xl&ac=qr", class: "dropdown-item", target: "_blank" %>
-      <% else %>
-        <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?author=#{ @book.author }&title=#{ @book.title }&st=xl&ac=qr", class: "dropdown-item", target: "_blank" %>
-      <% end %>
-    </li>
-  </ul>
+<div class="d-grid my-3">
+  <%= link_to "Destroy this book", @book, data: { turbo_method: :delete }, class: "btn btn-danger" %>
+<div>
+<div class="d-grid my-3">
+  <% if @book.isbn.present? %>
+    <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?isbn=#{ @book.isbn }&st=xl&ac=qr", class: "btn btn-secondary", target: "_blank" %>
+  <% else %>
+    <%= link_to "BookFinder Search", "https://www.bookfinder.com/search/?author=#{ @book.author }&title=#{ @book.title }&st=xl&ac=qr", class: "btn btn-secondary", target: "_blank" %>
+  <% end %>
 </div>
-
-<hr />
 
 <div class="d-grid mb-3 gap-2">
   <%= link_to "Redo ISBN search", book_isbn_searches_path(@book), data: { turbo_method: :post }, class: "btn btn-success" %>
-  <%= link_to "Clear", "#", class: "btn btn-danger" %>
 </div>
 
 <div class="accordion mb-5" id="isbnAccordion">
