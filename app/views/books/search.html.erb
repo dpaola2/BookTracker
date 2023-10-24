@@ -1,0 +1,7 @@
+<h1>Search Results</h1>
+
+<div id="books" class="list-group mt-3">
+  <% @books.each do |book| %>
+    <%= render "books/list_item", book: book %>
+  <% end %>
+</div>

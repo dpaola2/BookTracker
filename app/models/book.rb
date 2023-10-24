@@ -20,4 +20,8 @@ class Book < ApplicationRecord
 
   has_one_attached :image
   has_rich_text :comments
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["title", "author", "isbn"]
+  end
 end
