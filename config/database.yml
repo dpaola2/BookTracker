@@ -81,4 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: sqlite:///home/deploy/book-tracker/shared/production.sqlite3
+  database: ///home/deploy/book-tracker/shared/production.sqlite3
