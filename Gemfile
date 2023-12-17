@@ -19,6 +19,7 @@ gem "sassc-rails"
 gem "sprockets-rails"
 gem "sqlite3"
 gem "stimulus-rails"
+gem "tailwindcss-rails"
 gem "turbo-rails"
 
 group :development, :test do

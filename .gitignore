@@ -33,3 +33,5 @@
 .DS_Store
 db/*.sqlite3
 .idea
+/app/assets/builds/*
+!/app/assets/builds/.keep
