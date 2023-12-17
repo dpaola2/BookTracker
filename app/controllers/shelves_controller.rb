@@ -1,4 +1,5 @@
 class ShelvesController < ApplicationController
+  before_action :set_bootstrap
   before_action :authenticate_user!
   before_action :set_shelf, only: %i[ show edit update destroy ]
 
