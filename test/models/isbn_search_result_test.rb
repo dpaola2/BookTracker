@@ -2,7 +2,7 @@
 #
 # Table name: isbn_search_results
 #
-#  id         :bigint           not null, primary key
+#  id         :integer          not null, primary key
 #  authors    :string
 #  image_url  :string
 #  isbn10     :string

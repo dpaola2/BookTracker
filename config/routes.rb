@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   resources :shelves do
     resources :defaults, only: [:create]
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :sessions, only: [:create]
+    end
+  end
   
   root "shelves#index"
 end
