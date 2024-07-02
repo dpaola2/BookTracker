@@ -2,7 +2,7 @@
 #
 # Table name: books
 #
-#  id         :bigint           not null, primary key
+#  id         :integer          not null, primary key
 #  author     :string
 #  isbn       :string
 #  title      :string
