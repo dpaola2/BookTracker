@@ -21,10 +21,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Supabase", package: "supabase-swift")
             ],
-            path: "Sources/App",
-            resources: [
-                .process("Resources")
-            ]
+            path: "Sources/App"
         )
     ]
 )
