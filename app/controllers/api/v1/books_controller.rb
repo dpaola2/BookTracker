@@ -10,6 +10,15 @@ class Api::V1::BooksController < ApplicationController
   }
   end
 
+  def show
+    book = @current_user.books.find_by(id: params[:id])
+    if book
+      render json: { book: book }
+    else
+      render json: { error: "Book not found" }, status: 404
+    end
+  end
+
   private
 
   def valid_api_user?
