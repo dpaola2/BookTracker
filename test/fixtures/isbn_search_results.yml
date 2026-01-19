@@ -14,17 +14,17 @@
 #
 
 one:
-  book_id: 1
-  image_url: MyString
-  title: MyString
-  authors: MyString
-  isbn13: MyString
-  isbn10: MyString
+  book: one
+  image_url: https://via.placeholder.com/150
+  title: Test Book One
+  authors: Test Author
+  isbn13: "9781234567890"
+  isbn10: "1234567890"
 
 two:
-  book_id: 1
-  image_url: MyString
-  title: MyString
-  authors: MyString
-  isbn13: MyString
-  isbn10: MyString
+  book: one
+  image_url: https://via.placeholder.com/150
+  title: Test Book Two
+  authors: Test Author
+  isbn13: "9781234567891"
+  isbn10: "1234567891"

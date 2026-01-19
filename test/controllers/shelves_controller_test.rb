@@ -2,6 +2,8 @@ require "test_helper"
 
 class ShelvesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:one)
+    sign_in @user
     @shelf = shelves(:one)
   end
 

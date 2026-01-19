@@ -22,6 +22,9 @@
 
 one:
   email: user_one@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  default_shelf: one
 
 two:
   email: user_two@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>

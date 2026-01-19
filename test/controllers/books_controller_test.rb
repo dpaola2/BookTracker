@@ -2,6 +2,8 @@ require "test_helper"
 
 class BooksControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:one)
+    sign_in @user
     @book = books(:one)
   end
 
@@ -17,7 +19,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create book" do
     assert_difference("Book.count") do
-      post books_url, params: { book: { author: @book.author, isbn: @book.isbn, title: @book.title } }
+      post books_url, params: { book: { author: @book.author, isbn: @book.isbn, title: @book.title, shelf_id: shelves(:one).id } }
     end
 
     assert_redirected_to book_url(Book.last)

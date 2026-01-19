@@ -1,13 +1,14 @@
 require "test_helper"
 
 class IsbnSearchesControllerTest < ActionDispatch::IntegrationTest
-  test "should get create" do
-    get isbn_searches_create_url
-    assert_response :success
+  setup do
+    @user = users(:one)
+    sign_in @user
+    @book = books(:one)
   end
 
-  test "should get show" do
-    get isbn_searches_show_url
-    assert_response :success
+  test "should create isbn search and redirect to book" do
+    post book_isbn_searches_url(@book)
+    assert_redirected_to book_url(@book)
   end
 end

@@ -16,8 +16,12 @@ one:
   title: MyString
   author: MyString
   isbn: MyString
+  user: one
+  shelf: one
 
 two:
   title: MyString
   author: MyString
   isbn: MyString
+  user: one
+  shelf: one
