@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :sessions, only: [:create]
       resources :books, only: [:index]
+      resources :shelves, only: [:index]
     end
   end
   
