@@ -217,6 +217,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
+    redcarpet (3.6.1)
     redis (4.8.1)
     regexp_parser (2.8.0)
     reline (0.3.5)
@@ -303,6 +304,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   ransack
+  redcarpet
   redis (~> 4.0)
   sassc-rails
   selenium-webdriver

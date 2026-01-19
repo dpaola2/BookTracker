@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       resources :shelves, only: [:index]
     end
   end
+
+  resources :api_docs, only: [:index]
   
   root "shelves#index"
 end
