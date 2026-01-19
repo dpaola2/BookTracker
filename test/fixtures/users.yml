@@ -21,7 +21,7 @@
 #
 
 one:
-  email: MyString
+  email: user_one@example.com
 
 two:
-  email: MyString
+  email: user_two@example.com
