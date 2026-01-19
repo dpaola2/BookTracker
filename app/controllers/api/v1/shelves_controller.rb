@@ -14,6 +14,31 @@ class Api::V1::ShelvesController < ApplicationController
     }
   end
 
+  def show
+    shelf = @current_user.shelves.find_by(id: params[:id])
+
+    if shelf
+      render json: {
+        user: @current_user.email,
+        shelf: {
+          id: shelf.id,
+          name: shelf.name,
+          book_count: shelf.books.count,
+          books: shelf.books.map { |b|
+            {
+              id: b.id,
+              title: b.title,
+              author: b.author,
+              isbn: b.isbn
+            }
+          }
+        }
+      }
+    else
+      render json: { error: "Shelf not found" }, status: 404
+    end
+  end
+
   private
 
   def valid_api_user?
