@@ -1,13 +1,7 @@
 <h1>Books</h1>
 
 <div class="d-grid mb-3">
-  <%= search_form_for @q do |f| %>
-    <%= f.search_field :title_i_cont, placeholder: "Title search...", class: "form-control" %>
-    <%= f.search_field :author_i_cont, placeholder: "Author search...", class: "form-control" %>
-    <div class="d-grid">
-      <%= f.submit "Search", class: "btn btn-primary" %>
-    </div>
-  <% end %>
+  <%= link_to "Search Books", book_searches_path, class: "btn btn-primary" %>
 </div>
 
 <div id="books" class="list-group mt-3">

@@ -4,13 +4,7 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    if params[:q].present?
-      @q = current_user.books.ransack(params[:q])
-      @pagy, @books = pagy(@q.result(distinct: true))
-    else
-      @q = current_user.books.ransack(params[:q])
-      @pagy, @books = pagy(current_user.books.order(created_at: :desc))
-    end
+    @pagy, @books = pagy(current_user.books.order(created_at: :desc))
   end
 
   # GET /books/1 or /books/1.json

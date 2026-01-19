@@ -1,0 +1,19 @@
+<h1>Search Books</h1>
+
+<div class="d-grid mb-3">
+  <%= search_form_for @q, url: book_searches_path do |f| %>
+    <%= f.search_field :title_i_cont, placeholder: "Title search...", class: "form-control" %>
+    <%= f.search_field :author_i_cont, placeholder: "Author search...", class: "form-control" %>
+    <div class="d-grid">
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+<div id="books" class="list-group mt-3">
+  <% @books.each do |book| %>
+    <%= render "books/list_item", book: book %>
+  <% end %>
+</div>
+
+<%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :assignments, only: [:create]
     end
   end
+
+  resources :book_searches, only: [:index]
   
   resources :shelves do
     resources :defaults, only: [:create]
