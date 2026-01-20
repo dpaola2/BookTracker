@@ -29,7 +29,8 @@ class Api::V1::ShelvesController < ApplicationController
               id: b.id,
               title: b.title,
               author: b.author,
-              isbn: b.isbn
+              isbn: b.isbn,
+              image_url: book_image_url(b)
             }
           }
         }
@@ -40,6 +41,14 @@ class Api::V1::ShelvesController < ApplicationController
   end
 
   private
+
+  def book_image_url(book)
+    if book.image.attached?
+      rails_blob_url(book.image, only_path: false)
+    elsif book.isbn_search_results.first&.image_url.present?
+      book.isbn_search_results.first.image_url
+    end
+  end
 
   def valid_api_user?
     token = params[:api_key]

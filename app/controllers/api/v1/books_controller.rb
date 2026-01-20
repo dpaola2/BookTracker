@@ -13,13 +13,30 @@ class Api::V1::BooksController < ApplicationController
   def show
     book = @current_user.books.find_by(id: params[:id])
     if book
-      render json: { book: book }
+      render json: {
+        book: {
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          isbn: book.isbn,
+          image_url: book_image_url(book),
+          comments: book.comments.to_s
+        }
+      }
     else
       render json: { error: "Book not found" }, status: 404
     end
   end
 
   private
+
+  def book_image_url(book)
+    if book.image.attached?
+      rails_blob_url(book.image, only_path: false)
+    elsif book.isbn_search_results.first&.image_url.present?
+      book.isbn_search_results.first.image_url
+    end
+  end
 
   def valid_api_user?
     
