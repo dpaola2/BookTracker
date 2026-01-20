@@ -19,6 +19,8 @@ class Api::V1::BooksController < ApplicationController
           title: book.title,
           author: book.author,
           isbn: book.isbn,
+          shelf_id: book.shelf_id,
+          shelf_name: book.shelf.name,
           image_url: book_image_url(book),
           comments: book.comments.to_s
         }
