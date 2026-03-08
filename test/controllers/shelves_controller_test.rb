@@ -9,11 +9,13 @@ class ShelvesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get shelves_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_shelf_url
+
     assert_response :success
   end
 
@@ -27,16 +29,19 @@ class ShelvesControllerTest < ActionDispatch::IntegrationTest
 
   test "should show shelf" do
     get shelf_url(@shelf)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_shelf_url(@shelf)
+
     assert_response :success
   end
 
   test "should update shelf" do
     patch shelf_url(@shelf), params: { shelf: { name: @shelf.name } }
+
     assert_redirected_to shelf_url(@shelf)
   end
 

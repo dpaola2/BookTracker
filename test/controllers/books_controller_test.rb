@@ -9,11 +9,13 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get books_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_book_url
+
     assert_response :success
   end
 
@@ -27,16 +29,19 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
   test "should show book" do
     get book_url(@book)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_book_url(@book)
+
     assert_response :success
   end
 
   test "should update book" do
     patch book_url(@book), params: { book: { author: @book.author, isbn: @book.isbn, title: @book.title } }
+
     assert_redirected_to book_url(@book)
   end
 

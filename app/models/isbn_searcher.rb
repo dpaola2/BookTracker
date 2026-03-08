@@ -3,24 +3,23 @@ class IsbnSearcher
 
   def initialize(book:)
     @book = book
-    @client = ISBNdb::ApiClient.new(api_key: ENV['ISBNDB_API_KEY'])
+    @client = ISBNdb::ApiClient.new(api_key: ENV.fetch('ISBNDB_API_KEY', nil))
   end
 
   def search
     book.isbn_search_results.destroy_all
 
     begin
-      isbn_results = client.book.batch("#{ book['title'] } #{ book['author'] }")[:books]
-      
+      isbn_results = client.book.batch("#{book['title']} #{book['author']}")[:books]
+
       isbn_results.map do |isbn_result|
         result_from_hash(book: book, isbn_result: isbn_result)
       end
 
       true
-    rescue ISBNdb::RequestError => e
+    rescue ISBNdb::RequestError
       false
     end
-
   end
 
   def find_by_isbn
@@ -29,7 +28,7 @@ class IsbnSearcher
     begin
       isbn_result = client.book.find(book.isbn)
       result_from_hash(book: book, isbn_result: isbn_result[:book])
-    rescue ISBNdb::RequestError => e
+    rescue ISBNdb::RequestError
       false
     end
   end

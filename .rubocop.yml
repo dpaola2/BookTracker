@@ -1,0 +1,61 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-minitest
+
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - "db/schema.rb"
+    - "db/migrate/**/*"
+    - "bin/**/*"
+    - "config/**/*"
+    - "vendor/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "lib/tasks/**/*"
+    - "Rakefile"
+
+# Prefer double quotes but don't fight existing style
+Style/StringLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# Rails defaults generate long blocks in routes/tests
+Metrics/BlockLength:
+  Exclude:
+    - "test/**/*"
+    - "config/routes.rb"
+    - "config/environments/**/*"
+    - "lib/tasks/**/*"
+
+Metrics/MethodLength:
+  Max: 25
+  Exclude:
+    - "test/**/*"
+
+Metrics/AbcSize:
+  Max: 40
+  Exclude:
+    - "test/**/*"
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - "test/**/*"
+
+# Empty test classes will be filled in as coverage improves
+Minitest/NoTestCases:
+  Enabled: false
+
+# Some integration tests legitimately need multiple assertions
+Minitest/MultipleAssertions:
+  Max: 5
