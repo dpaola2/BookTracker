@@ -118,6 +118,8 @@ bin/rails test test/path/to/file.rb:42   # single test by line number
 
 ### Test Philosophy
 
+**Always use TDD.** Write failing tests first, then write the minimum code to make them pass. Red → Green → Refactor. This applies to new features, bug fixes, and refactors alike. Never write production code without a corresponding test.
+
 Follow **Sandi Metz's testing principles** and **SOLID design**:
 
 1. **Test the public interface, not implementation details.** Tests should verify what an object does (messages sent/received), not how it does it internally.
@@ -183,8 +185,13 @@ Three parallel jobs run on every push/PR to `main` (defined in `.github/workflow
 | `ACCESS_KEY` | AWS access key |
 | `SECRET_KEY` | AWS secret key |
 
+## Work Tracking
+
+This project uses the **BOOK** namespace in WCP (Work Context Protocol) for task tracking. Reference callsigns (e.g., `BOOK-1`) in commit messages and PR descriptions for traceability.
+
 ## Conventions
 
+- **TDD always** — write failing tests first, then implementation
 - RESTful resource routing throughout
 - User-scoped data access in all controllers (never expose other users' data)
 - Service objects live in `app/models/` (not a separate `app/services/` dir)
