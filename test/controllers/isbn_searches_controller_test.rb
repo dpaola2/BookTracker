@@ -9,6 +9,7 @@ class IsbnSearchesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create isbn search and redirect to book" do
     post book_isbn_searches_url(@book)
+
     assert_redirected_to book_url(@book)
   end
 end

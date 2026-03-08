@@ -29,3 +29,33 @@ jobs:
         env:
           RAILS_ENV: test
           ISBNDB_API_KEY: test_dummy_key
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+
+      - name: Rubocop
+        run: bundle exec rubocop
+
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+
+      - name: Brakeman
+        run: bundle exec brakeman --no-pager --except EOLRails,EOLRuby

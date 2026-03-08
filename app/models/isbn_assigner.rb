@@ -15,12 +15,18 @@ class IsbnAssigner
 
       url = URI.parse(isbn_search_result.image_url)
       filename = File.basename(url.path)
-      file = URI.open(url)
+      file = open_image(url)
       isbn_search_result.book.image.attach(io: file, filename: filename)
 
       true
     else
       false
     end
+  end
+
+  private
+
+  def open_image(url)
+    URI.open(url)
   end
 end

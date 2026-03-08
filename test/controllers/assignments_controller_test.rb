@@ -9,10 +9,21 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create assignment and redirect to book" do
-    # Skip: IsbnAssigner.assign makes real HTTP requests to download images.
-    # This test needs WebMock or VCR to properly stub the network call.
-    skip "Requires HTTP mocking for image download"
-    post book_isbn_search_assignments_url(@book, @isbn_search_result)
+    mock_assigner = Minitest::Mock.new
+    mock_assigner.expect(:assign, true)
+
+    IsbnAssigner.stub(:new, mock_assigner) do
+      post book_isbn_search_assignments_url(@book, @isbn_search_result)
+    end
+
     assert_redirected_to book_path(@book)
+    assert_equal "Book was successfully assigned.", flash[:notice]
+  end
+
+  test "requires authentication" do
+    sign_out @user
+    post book_isbn_search_assignments_url(@book, @isbn_search_result)
+
+    assert_redirected_to new_user_session_url
   end
 end

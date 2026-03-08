@@ -10,7 +10,7 @@ class SofaImporter
   end
 
   def shelves
-    @shelves ||= csv.map {|d| d["List Name"] }.uniq
+    @shelves ||= csv.pluck("List Name").uniq
   end
 
   def books

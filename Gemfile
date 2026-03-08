@@ -24,7 +24,11 @@ gem "turbo-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "brakeman", require: false
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "rubocop", require: false
+  gem "rubocop-minitest", require: false
+  gem "rubocop-rails", require: false
 end
 
 group :development do
@@ -38,5 +42,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "simplecov", require: false
   gem "webdrivers"
 end

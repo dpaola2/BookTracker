@@ -4,10 +4,8 @@ class IsbnSearchesController < ApplicationController
 
   def create
     searcher = IsbnSearcher.new(book: @book)
-    unless searcher.search
-      flash[:alert] = "ISBNdb API error"
-    end
-  
+    flash[:alert] = "ISBNdb API error" unless searcher.search
+
     redirect_to book_url(@book)
   end
 

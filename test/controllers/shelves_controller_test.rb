@@ -9,11 +9,13 @@ class ShelvesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get shelves_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_shelf_url
+
     assert_response :success
   end
 
@@ -27,16 +29,19 @@ class ShelvesControllerTest < ActionDispatch::IntegrationTest
 
   test "should show shelf" do
     get shelf_url(@shelf)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_shelf_url(@shelf)
+
     assert_response :success
   end
 
   test "should update shelf" do
     patch shelf_url(@shelf), params: { shelf: { name: @shelf.name } }
+
     assert_redirected_to shelf_url(@shelf)
   end
 
@@ -46,5 +51,21 @@ class ShelvesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to shelves_url
+  end
+
+  test "cannot access another users shelf" do
+    other_user = users(:two)
+    other_shelf = Shelf.create!(name: "Other Shelf", user: other_user)
+
+    assert_raises(ActiveRecord::RecordNotFound) do
+      get shelf_url(other_shelf)
+    end
+  end
+
+  test "requires authentication" do
+    sign_out @user
+    get shelves_url
+
+    assert_redirected_to new_user_session_url
   end
 end

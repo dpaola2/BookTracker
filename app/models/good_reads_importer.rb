@@ -1,7 +1,7 @@
 class GoodReadsImporter
   attr_reader :filename, :user, :csv
 
-  def initialize(filename: 'public/goodreads_library_export.csv', user:)
+  def initialize(user:, filename: 'public/goodreads_library_export.csv')
     @filename = filename
     @user = user
   end
@@ -17,7 +17,7 @@ class GoodReadsImporter
         author: d["Author l-f"],
         shelf: shelf_name_from_record(record: d),
         comments: comments_from_record(record: d),
-        isbn: d["ISBN13"].tr("\"","").tr("=","")
+        isbn: d["ISBN13"].tr("\"", "").tr("=", "")
       }
     end
   end
@@ -47,15 +47,13 @@ class GoodReadsImporter
       if book.comments.blank?
         book.update(comments: book[:comments])
       else
-        book.update(comments: "#{ book.comments } #{ book[:comments] }")
+        book.update(comments: "#{book.comments} #{book[:comments]}")
       end
 
       # search for the ISBN if we don't have an image
-      if !book.image.attached?
+      unless book.image.attached?
         isbn_result = IsbnSearcher.new(book: book).find_by_isbn
-        if isbn_result
-          IsbnAssigner.new(book: book, isbn_search_result: isbn_result).assign
-        end
+        IsbnAssigner.new(book: book, isbn_search_result: isbn_result).assign if isbn_result
       end
     end
   end
@@ -66,7 +64,7 @@ class GoodReadsImporter
         if record["Bookshelves"].index("abandoned").present? # put it into the abandoned shelf
           "👎 Abandoned / Disliked"
         else
-          "👍 Books: Liked"    
+          "👍 Books: Liked"
         end
       else
         "👍 Books: Liked"
