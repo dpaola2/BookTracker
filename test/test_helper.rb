@@ -8,6 +8,7 @@ ENV["RAILS_ENV"] ||= "test"
 ENV["ISBNDB_API_KEY"] ||= "test_dummy_key"
 require_relative "../config/environment"
 require "rails/test_help"
+require "minitest/mock"
 
 module ActiveSupport
   class TestCase

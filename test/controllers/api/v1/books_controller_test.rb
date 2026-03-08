@@ -25,6 +25,35 @@ module Api
         )
       end
 
+      # -- index --
+
+      test "index returns all books for authenticated user" do
+        get api_v1_books_url, params: { api_key: @user.api_key, user_id: @user.id }
+
+        assert_response :success
+        json = response.parsed_body
+
+        assert_equal @user.email, json["user"]
+        assert_equal 1, json["book_count"]
+      end
+
+      test "index does not include other users books" do
+        get api_v1_books_url, params: { api_key: @user.api_key, user_id: @user.id }
+
+        titles = response.parsed_body["books"].map { |b| b["title"] }
+
+        assert_includes titles, "Test Book"
+        assert_not_includes titles, "Other Book"
+      end
+
+      test "index returns 401 without credentials" do
+        get api_v1_books_url
+
+        assert_response :unauthorized
+      end
+
+      # -- show --
+
       test "should get book with valid credentials" do
         get api_v1_book_url(@book), params: { api_key: @user.api_key, user_id: @user.id }
 
