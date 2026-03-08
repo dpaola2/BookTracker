@@ -52,4 +52,21 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to books_url
   end
+
+  test "cannot access another users book" do
+    other_user = users(:two)
+    other_shelf = Shelf.create!(name: "Other Shelf", user: other_user)
+    other_book = Book.create!(title: "Other Book", author: "Other", user: other_user, shelf: other_shelf)
+
+    assert_raises(ActiveRecord::RecordNotFound) do
+      get book_url(other_book)
+    end
+  end
+
+  test "requires authentication" do
+    sign_out @user
+    get books_url
+
+    assert_redirected_to new_user_session_url
+  end
 end

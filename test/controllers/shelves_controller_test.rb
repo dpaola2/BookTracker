@@ -52,4 +52,20 @@ class ShelvesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to shelves_url
   end
+
+  test "cannot access another users shelf" do
+    other_user = users(:two)
+    other_shelf = Shelf.create!(name: "Other Shelf", user: other_user)
+
+    assert_raises(ActiveRecord::RecordNotFound) do
+      get shelf_url(other_shelf)
+    end
+  end
+
+  test "requires authentication" do
+    sign_out @user
+    get shelves_url
+
+    assert_redirected_to new_user_session_url
+  end
 end
