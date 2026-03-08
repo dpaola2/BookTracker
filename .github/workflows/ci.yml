@@ -58,4 +58,4 @@ jobs:
           bundler-cache: true
 
       - name: Brakeman
-        run: bundle exec brakeman --no-pager --skip-checks EOLRails,EOLRuby
+        run: bundle exec brakeman --no-pager --except EOLRails,EOLRuby
