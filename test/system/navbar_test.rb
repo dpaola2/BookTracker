@@ -29,8 +29,8 @@ class NavbarTest < ApplicationSystemTestCase
       settings_index = nav_items.index("Settings")
 
       assert_not_nil search_index, "Search link should be present in navbar"
-      assert search_index > shelves_index, "Search should appear after Shelves"
-      assert search_index < settings_index, "Search should appear before Settings"
+      assert_operator search_index, :>, shelves_index, "Search should appear after Shelves"
+      assert_operator search_index, :<, settings_index, "Search should appear before Settings"
     end
   end
 

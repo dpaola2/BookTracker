@@ -99,6 +99,7 @@ IsbnSearchResult
 ### Framework & Setup
 
 - **Minitest** with Rails test helpers
+- **SimpleCov** for code coverage (reports to `coverage/`)
 - **Fixtures** for test data (`test/fixtures/*.yml`)
 - **Devise::Test::IntegrationHelpers** included for all integration tests
 - **Parallel execution** enabled (`parallelize(workers: :number_of_processors)`)
@@ -145,15 +146,32 @@ test/
 └── test_helper.rb      # Shared setup, Devise helpers
 ```
 
-## CI / GitHub Actions
+## Code Quality
 
-Tests run on every push and pull request via GitHub Actions. The workflow is defined in `.github/workflows/ci.yml`.
+### Linting (Rubocop)
 
 ```bash
-# CI runs the equivalent of:
-bin/rails db:setup
-bin/rails test
+bundle exec rubocop           # check for offenses
+bundle exec rubocop -A         # auto-correct
 ```
+
+Config in `.rubocop.yml`. Known pre-existing offenses are tracked in `.rubocop_todo.yml` — fix these as you touch the relevant code.
+
+### Security (Brakeman)
+
+```bash
+bundle exec brakeman --no-pager
+```
+
+Static analysis for common Rails security vulnerabilities (XSS, SQL injection, mass assignment, etc.).
+
+## CI / GitHub Actions
+
+Three parallel jobs run on every push/PR to `main` (defined in `.github/workflows/ci.yml`):
+
+1. **test** — `bin/rails test` (Minitest + SimpleCov)
+2. **lint** — `bundle exec rubocop`
+3. **security** — `bundle exec brakeman`
 
 ## Environment Variables
 

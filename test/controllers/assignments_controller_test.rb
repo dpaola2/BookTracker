@@ -13,6 +13,7 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
     # This test needs WebMock or VCR to properly stub the network call.
     skip "Requires HTTP mocking for image download"
     post book_isbn_search_assignments_url(@book, @isbn_search_result)
+
     assert_redirected_to book_path(@book)
   end
 end

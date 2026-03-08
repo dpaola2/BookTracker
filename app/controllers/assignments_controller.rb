@@ -10,7 +10,7 @@ class AssignmentsController < ApplicationController
     else
       flash[:alert] = "There was a problem assigning the book."
     end
-    
+
     redirect_to book_path(@isbn_search_result.book)
   end
 

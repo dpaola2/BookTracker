@@ -9,6 +9,7 @@ class DefaultsControllerTest < ActionDispatch::IntegrationTest
 
   test "should set default shelf and redirect" do
     post shelf_defaults_url(@shelf)
+
     assert_redirected_to shelf_url(@shelf)
   end
 end

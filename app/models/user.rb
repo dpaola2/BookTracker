@@ -27,12 +27,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
   has_many :books
   belongs_to :default_shelf, foreign_key: :shelf_id, class_name: "Shelf", optional: true
   has_many :shelves
-  
+
   def generate_api_key
-    self.api_key = SecureRandom.hex(20) unless self.api_key.present?
+    self.api_key = SecureRandom.hex(20) if api_key.blank?
   end
 end

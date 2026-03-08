@@ -12,8 +12,6 @@
 #  user_id    :integer
 #
 class Book < ApplicationRecord
-  validates :user_id, presence: true
-
   belongs_to :shelf
   belongs_to :user
   has_many :isbn_search_results, dependent: :destroy
@@ -21,7 +19,7 @@ class Book < ApplicationRecord
   has_one_attached :image
   has_rich_text :comments
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["title", "author", "isbn"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[title author isbn]
   end
 end

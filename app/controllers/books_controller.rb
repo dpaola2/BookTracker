@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :set_book, only: %i[show edit update destroy]
 
   # GET /books or /books.json
   def index
@@ -8,8 +8,7 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1 or /books/1.json
-  def show
-  end
+  def show; end
 
   # GET /books/new
   def new
@@ -17,8 +16,7 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /books or /books.json
   def create
@@ -26,7 +24,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        searcher = IsbnSearcher.new(book: @book).search
+        IsbnSearcher.new(book: @book).search
 
         format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
         format.json { render :show, status: :created, location: @book }
@@ -41,7 +39,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        searcher = IsbnSearcher.new(book: @book).search
+        IsbnSearcher.new(book: @book).search
 
         format.html { redirect_to book_url(@book), notice: "Book was successfully updated." }
         format.json { render :show, status: :ok, location: @book }
@@ -63,13 +61,14 @@ class BooksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = current_user.books.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def book_params
-      params.require(:book).permit(:title, :author, :isbn, :shelf_id, :image, :comments)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_book
+    @book = current_user.books.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def book_params
+    params.require(:book).permit(:title, :author, :isbn, :shelf_id, :image, :comments)
+  end
 end
