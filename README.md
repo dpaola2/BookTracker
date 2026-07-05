@@ -1,24 +1,21 @@
-# README
+# BookTracker (Reader)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails 7 web + API application for cataloging a personal book library. Books are organized into shelves, enriched with metadata from ISBNdb and Claude (fiction/nonfiction classification + genres), and served to both a web UI and a JSON API consumed by a companion iOS app.
 
-Things you may want to cover:
+## Quick start
 
-* Ruby version
+```bash
+bundle install
+bin/rails db:setup
+bin/rails server          # http://localhost:3000
+bin/rails test
+```
 
-* System dependencies
+## Documentation
 
-* Configuration
+- **[CLAUDE.md](CLAUDE.md)** — architecture, data model, testing conventions, and engineering methodology (start here)
+- **[doc/ROADMAP.md](doc/ROADMAP.md)** — improvement priorities and the analysis behind them
+- **[doc/DEPLOY.md](doc/DEPLOY.md)** — production setup (Hatchbox) and operations
+- **[doc/api.md](doc/api.md)** — JSON API reference
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Work is tracked in the WCP **BOOK** namespace; commits reference callsigns (e.g. `BOOK-11`).

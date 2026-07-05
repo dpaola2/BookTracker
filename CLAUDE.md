@@ -92,7 +92,7 @@ IsbnSearchResult
 | `config/routes.rb` | All route definitions |
 | `db/schema.rb` | Current database schema |
 | `test/` | Minitest test suite |
-| `doc/` | API docs, PRD, SDD |
+| `doc/` | API docs, PRD, SDD, [ROADMAP.md](doc/ROADMAP.md) (improvement priorities), [DEPLOY.md](doc/DEPLOY.md) (production ops) |
 
 ## Engineering Methodology
 
