@@ -6,7 +6,8 @@ module Api
       setup do
         @user = User.create!(email: "shelves_api@example.com", password: "password123")
         @shelf = Shelf.create!(name: "My Shelf", user: @user)
-        @book = Book.create!(title: "Shelf Book", author: "Author", isbn: "111", user: @user, shelf: @shelf)
+        @book = Book.create!(title: "Shelf Book", author: "Author", isbn: "111",
+                             classification: "nonfiction", genres: "History", user: @user, shelf: @shelf)
 
         @other_user = User.create!(email: "other_shelves@example.com", password: "password123")
         @other_shelf = Shelf.create!(name: "Other Shelf", user: @other_user)
@@ -51,6 +52,15 @@ module Api
         assert_equal "My Shelf", json["shelf"]["name"]
         assert_equal 1, json["shelf"]["books"].length
         assert_equal "Shelf Book", json["shelf"]["books"].first["title"]
+      end
+
+      test "show includes classification and genre list on books" do
+        get api_v1_shelf_url(@shelf), params: { api_key: @user.api_key, user_id: @user.id }
+
+        book_json = response.parsed_body["shelf"]["books"].first
+
+        assert_equal "nonfiction", book_json["classification"]
+        assert_equal ["History"], book_json["genres"]
       end
 
       test "show returns 404 for non-existent shelf" do

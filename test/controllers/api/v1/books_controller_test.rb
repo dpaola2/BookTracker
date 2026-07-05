@@ -10,6 +10,8 @@ module Api
           title: "Test Book",
           author: "Test Author",
           isbn: "1234567890",
+          classification: "fiction",
+          genres: "Science Fiction,Fantasy",
           user: @user,
           shelf: @shelf
         )
@@ -46,6 +48,15 @@ module Api
         assert_not_includes titles, "Other Book"
       end
 
+      test "index includes classification and genres" do
+        get api_v1_books_url, params: { api_key: @user.api_key, user_id: @user.id }
+
+        book_json = response.parsed_body["books"].find { |b| b["title"] == "Test Book" }
+
+        assert_equal "fiction", book_json["classification"]
+        assert_equal "Science Fiction,Fantasy", book_json["genres"]
+      end
+
       test "index returns 401 without credentials" do
         get api_v1_books_url
 
@@ -63,6 +74,15 @@ module Api
         assert_equal @book.id, json_response["book"]["id"]
         assert_equal "Test Book", json_response["book"]["title"]
         assert_equal "Test Author", json_response["book"]["author"]
+      end
+
+      test "show includes classification and genre list" do
+        get api_v1_book_url(@book), params: { api_key: @user.api_key, user_id: @user.id }
+
+        book_json = response.parsed_body["book"]
+
+        assert_equal "fiction", book_json["classification"]
+        assert_equal ["Science Fiction", "Fantasy"], book_json["genres"]
       end
 
       test "should return 404 for non-existent book" do

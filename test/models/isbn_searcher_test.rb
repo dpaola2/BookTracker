@@ -59,6 +59,55 @@ class IsbnSearcherTest < ActiveSupport::TestCase
     assert_equal "Author A", result.authors
   end
 
+  test "search persists subjects synopsis pages and date_published" do
+    mock_client = Minitest::Mock.new
+    mock_book_client = Minitest::Mock.new
+    mock_book_client.expect(:batch, {
+                              books: [
+                                {
+                                  isbn13: "9781111111111", isbn10: "1111111111", title: "Found Book",
+                                  authors: ["Author A"], image: "http://example.com/img.jpg",
+                                  subjects: ["Science Fiction", "Space Opera"],
+                                  synopsis: "A grand space adventure.",
+                                  pages: 432,
+                                  date_published: "2019"
+                                }
+                              ]
+                            }, [String])
+    mock_client.expect(:book, mock_book_client)
+
+    @searcher.stub(:client, mock_client) do
+      @searcher.search
+    end
+
+    result = @book.isbn_search_results.reload.last
+
+    assert_equal "Science Fiction,Space Opera", result.subjects
+    assert_equal "A grand space adventure.", result.synopsis
+    assert_equal 432, result.pages
+    assert_equal "2019", result.date_published
+  end
+
+  test "search tolerates results without extended metadata" do
+    mock_client = Minitest::Mock.new
+    mock_book_client = Minitest::Mock.new
+    mock_book_client.expect(:batch, {
+                              books: [
+                                { isbn13: "9781111111111", isbn10: "1111111111", title: "Found Book", authors: ["Author A"], image: "http://example.com/img.jpg" }
+                              ]
+                            }, [String])
+    mock_client.expect(:book, mock_book_client)
+
+    @searcher.stub(:client, mock_client) do
+      @searcher.search
+    end
+
+    result = @book.isbn_search_results.reload.last
+
+    assert_nil result.subjects
+    assert_nil result.pages
+  end
+
   test "search returns false on api error" do
     mock_client = Minitest::Mock.new
     mock_book_client = Minitest::Mock.new

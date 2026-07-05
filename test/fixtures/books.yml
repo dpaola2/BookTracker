@@ -2,14 +2,16 @@
 #
 # Table name: books
 #
-#  id         :integer          not null, primary key
-#  author     :string
-#  isbn       :string
-#  title      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  shelf_id   :integer
-#  user_id    :integer
+#  id             :integer          not null, primary key
+#  author         :string
+#  classification :string
+#  genres         :string
+#  isbn           :string
+#  title          :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  shelf_id       :integer
+#  user_id        :integer
 #
 
 one:
