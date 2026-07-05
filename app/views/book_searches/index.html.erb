@@ -4,6 +4,20 @@
   <%= search_form_for @q, url: book_searches_path do |f| %>
     <%= f.search_field :title_i_cont, placeholder: "Title search...", class: "form-control" %>
     <%= f.search_field :author_i_cont, placeholder: "Author search...", class: "form-control" %>
+    <div class="row g-2 my-1">
+      <div class="col">
+        <%= f.select :classification_eq,
+                     options_for_select(Book::CLASSIFICATIONS.map { |c| [c.capitalize, c] }, params.dig(:q, :classification_eq)),
+                     { include_blank: "Fiction & Nonfiction" },
+                     class: "form-select" %>
+      </div>
+      <div class="col">
+        <%= f.select :genres_cont,
+                     options_for_select(Book::GENRES, params.dig(:q, :genres_cont)),
+                     { include_blank: "Any genre" },
+                     class: "form-select" %>
+      </div>
+    </div>
     <div class="d-grid">
       <%= f.submit "Search", class: "btn btn-primary" %>
     </div>

@@ -11,6 +11,14 @@
           <h5 class="card-title"><%= book.title %></h5>
           <p class="card-text"><%= book.author %></p>
           <p class="card-text"><small class="text-body-secondary"><%= book.isbn %></small></p>
+          <p class="card-text">
+            <% if book.classification.present? %>
+              <span class="badge bg-secondary"><%= book.classification.capitalize %></span>
+            <% end %>
+            <% book.genre_list.each do |genre| %>
+              <span class="badge bg-info text-dark"><%= genre %></span>
+            <% end %>
+          </p>
         </div>
       </div>
     </div>

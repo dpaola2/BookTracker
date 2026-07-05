@@ -32,6 +32,8 @@ module Api
                   title: b.title,
                   author: b.author,
                   isbn: b.isbn,
+                  classification: b.classification,
+                  genres: b.genre_list,
                   image_url: book_image_url(b)
                 }
               end

@@ -16,6 +16,12 @@
       <% if !book.isbn.present? %>
         <span class="badge bg-danger">No ISBN</span>
       <% end %>
+      <% if book.classification.present? %>
+        <span class="badge bg-secondary"><%= book.classification.capitalize %></span>
+      <% end %>
+      <% book.genre_list.each do |genre| %>
+        <span class="badge bg-info text-dark"><%= genre %></span>
+      <% end %>
     </div>
   </div>          
 <% end %>

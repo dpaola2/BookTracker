@@ -221,6 +221,7 @@ Three parallel jobs run on every push/PR to `main` (defined in `.github/workflow
 | Variable | Purpose |
 |----------|---------|
 | `ISBNDB_API_KEY` | ISBNdb API access (set to `test_dummy_key` in test) |
+| `ANTHROPIC_API_KEY` | Claude API access for `BookClassifier` / `books:classify` |
 | `S3_BUCKET` | Production image storage bucket |
 | `AWS_REGION` | AWS region for S3 |
 | `ACCESS_KEY` | AWS access key |

@@ -39,7 +39,11 @@ class IsbnSearcher
       isbn10: isbn_result[:isbn10],
       title: isbn_result[:title],
       authors: isbn_result[:authors].join(","),
-      image_url: isbn_result[:image]
+      image_url: isbn_result[:image],
+      subjects: isbn_result[:subjects]&.join(","),
+      synopsis: isbn_result[:synopsis],
+      pages: isbn_result[:pages],
+      date_published: isbn_result[:date_published]
     )
   end
 end

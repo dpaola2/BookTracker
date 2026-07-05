@@ -23,6 +23,8 @@ module Api
               isbn: book.isbn,
               shelf_id: book.shelf_id,
               shelf_name: book.shelf.name,
+              classification: book.classification,
+              genres: book.genre_list,
               image_url: book_image_url(book),
               comments: book.comments.to_s
             }
