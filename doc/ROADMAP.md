@@ -25,7 +25,7 @@ Backfill: `bin/rails books:classify` (idempotent — only touches `classificatio
 
 **Backfill ran July 2026.** Final production state: **1,243 books, 100% classified** — 326 fiction / 917 nonfiction. Top genres: History 280, Business 250, Biography & Memoir 197, Science/Self-Help 184 each, Science Fiction 180, Philosophy 171. The run also surfaced 29 orphaned rows (movies/TV/board games from the Sofa import pointing at deleted shelves — no FKs meant they survived shelf deletion); deleted after confirming the Sofa export is preserved in `public/SofaExport-17022023-212837.csv` (pre-delete DB backup at `~/book-tracker/shared/pre-orphan-delete-backup.sqlite3` on the server).
 
-**Follow-on shipped:** BOOK-12 (PR #30) — the root page is now a library dashboard surfacing these stats: stat tiles, clickable top-genre badges deep-linking into search filters, recently updated books, and each shelf's latest additions.
+**Follow-ons shipped:** BOOK-12 (PR #30) made the root page a library dashboard; BOOK-13 (PR #31) reworked its IA — clickable stat tiles, top-genre badges deep-linking into search filters, a 📖 In Progress hero row with covers (shelf found by name match until read status is first-class — see Priority 2), recently *added* books (`created_at`; `updated_at` is clobbered by bulk ops like the backfill), and per-shelf cards showing the 3 newest additions with 6-month-idle shelves collapsed to count-only rows.
 
 ## Priority 2 — First-class `status` and `rating` on Book (proposed)
 
