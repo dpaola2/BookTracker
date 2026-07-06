@@ -2,36 +2,44 @@
 
 <div class="row g-3 mb-4 text-center">
   <div class="col-6 col-md-3">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="mb-0"><%= @dashboard.book_count %></h2>
-        <small class="text-body-secondary">Books</small>
+    <%= link_to books_path, class: "text-decoration-none text-reset" do %>
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="mb-0"><%= @dashboard.book_count %></h2>
+          <small class="text-body-secondary">Books</small>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
   <div class="col-6 col-md-3">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="mb-0"><%= @dashboard.shelf_count %></h2>
-        <small class="text-body-secondary">Shelves</small>
+    <%= link_to shelves_path, class: "text-decoration-none text-reset" do %>
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="mb-0"><%= @dashboard.shelf_count %></h2>
+          <small class="text-body-secondary">Shelves</small>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
   <div class="col-6 col-md-3">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="mb-0"><%= @dashboard.fiction_count %></h2>
-        <small class="text-body-secondary">Fiction</small>
+    <%= link_to book_searches_path(q: { classification_eq: "fiction" }), class: "text-decoration-none text-reset" do %>
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="mb-0"><%= @dashboard.fiction_count %></h2>
+          <small class="text-body-secondary">Fiction</small>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
   <div class="col-6 col-md-3">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="mb-0"><%= @dashboard.nonfiction_count %></h2>
-        <small class="text-body-secondary">Nonfiction</small>
+    <%= link_to book_searches_path(q: { classification_eq: "nonfiction" }), class: "text-decoration-none text-reset" do %>
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="mb-0"><%= @dashboard.nonfiction_count %></h2>
+          <small class="text-body-secondary">Nonfiction</small>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
@@ -49,18 +57,45 @@
   </div>
 </div>
 
+<% if @dashboard.currently_reading %>
+  <% reading_shelf, reading_books = @dashboard.currently_reading %>
+  <div class="card mb-4">
+    <div class="card-header"><%= link_to reading_shelf.name, shelf_path(reading_shelf), class: "text-decoration-none" %></div>
+    <div class="card-body">
+      <div class="row g-3">
+        <% reading_books.each do |book| %>
+          <div class="col-4 col-md-2">
+            <%= link_to book_path(book), class: "text-decoration-none text-reset", title: book.title do %>
+              <% if book.image.attached? %>
+                <%= image_tag book.image, class: "img-fluid rounded shadow-sm" %>
+              <% elsif book.isbn_search_results.first&.image_url.present? %>
+                <%= image_tag book.isbn_search_results.first.image_url, class: "img-fluid rounded shadow-sm" %>
+              <% else %>
+                <div class="border rounded p-2 h-100 d-flex align-items-center text-center">
+                  <small><%= book.title %></small>
+                </div>
+              <% end %>
+              <small class="d-block text-truncate mt-1"><%= book.title %></small>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="row g-3">
   <div class="col-md-6">
     <div class="card mb-3">
-      <div class="card-header">Recently updated</div>
+      <div class="card-header">Recently added</div>
       <div class="list-group list-group-flush">
-        <% @dashboard.recently_updated.each do |book| %>
+        <% @dashboard.recently_added.each do |book| %>
           <%= link_to book_path(book), class: "list-group-item list-group-item-action" do %>
             <%= book.title %>
             <% if book.classification.present? %>
               <span class="badge bg-secondary"><%= book.classification.capitalize %></span>
             <% end %>
-            <small class="text-body-secondary d-block"><%= time_ago_in_words(book.updated_at) %> ago</small>
+            <small class="text-body-secondary d-block"><%= time_ago_in_words(book.created_at) %> ago</small>
           <% end %>
         <% end %>
       </div>
@@ -68,14 +103,35 @@
   </div>
 
   <div class="col-md-6">
-    <% @dashboard.shelves_with_recent_books.each do |shelf, books| %>
+    <% active, quiet = @dashboard.shelf_summaries.partition { |summary| summary.recent_books.any? } %>
+
+    <% active.each do |summary| %>
       <div class="card mb-3">
         <div class="card-header">
-          <%= link_to shelf.name, shelf_path(shelf), class: "text-decoration-none" %>
+          <%= link_to summary.shelf.name, shelf_path(summary.shelf), class: "text-decoration-none" %>
+          <span class="badge bg-secondary float-end"><%= summary.book_count %></span>
         </div>
         <div class="list-group list-group-flush">
-          <% books.each do |book| %>
+          <% summary.recent_books.each do |book| %>
             <%= link_to book.title, book_path(book), class: "list-group-item list-group-item-action" %>
+          <% end %>
+          <% if summary.book_count > summary.recent_books.length %>
+            <%= link_to "and #{summary.book_count - summary.recent_books.length} more…", shelf_path(summary.shelf),
+                        class: "list-group-item list-group-item-action text-body-secondary" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if quiet.any? %>
+      <div class="card mb-3">
+        <div class="card-header">Quieter shelves</div>
+        <div class="list-group list-group-flush">
+          <% quiet.each do |summary| %>
+            <%= link_to shelf_path(summary.shelf), class: "list-group-item list-group-item-action d-flex justify-content-between" do %>
+              <span><%= summary.shelf.name %></span>
+              <span class="badge bg-secondary"><%= summary.book_count %></span>
+            <% end %>
           <% end %>
         </div>
       </div>
