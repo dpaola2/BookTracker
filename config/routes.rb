@@ -24,5 +24,5 @@ Rails.application.routes.draw do
 
   resources :api_docs, only: [:index]
   
-  root "shelves#index"
+  root "home#index"
 end
