@@ -44,11 +44,14 @@ Book
 ├── belongs_to :user
 ├── has_many :isbn_search_results, dependent: :destroy
 ├── has_one_attached :image (Active Storage)
-└── has_rich_text :comments (Action Text)
+├── has_rich_text :comments (Action Text)
+├── classification (fiction/nonfiction, validated; see Book::CLASSIFICATIONS)
+└── genres (comma-separated, controlled vocab in Book::GENRES; Book#genre_list)
 
 IsbnSearchResult
 └── belongs_to :book
-    (stores: image_url, title, authors, isbn13, isbn10)
+    (stores: image_url, title, authors, isbn13, isbn10,
+     subjects, synopsis, pages, date_published)
 ```
 
 **Note:** No foreign keys at the DB level — associations enforced by Rails only. All data is user-scoped; controllers filter by `current_user`.
@@ -62,7 +65,7 @@ IsbnSearchResult
 
 | Method | Path | Purpose |
 |--------|------|---------|
-| `GET` | `/` | Shelves index (root) |
+| `GET` | `/` | Library dashboard (root): stats, top genres, recent books |
 | | `/books` | Book CRUD (web) |
 | `POST` | `/books/:id/isbn_searches` | Trigger ISBN lookup |
 | `POST` | `/books/:id/isbn_searches/:id/assignments` | Apply ISBN result to book |
@@ -77,8 +80,10 @@ IsbnSearchResult
 
 ### Service Objects (in `app/models/`)
 
-- **IsbnSearcher** — Queries ISBNdb API by title+author or ISBN
+- **IsbnSearcher** — Queries ISBNdb API by title+author or ISBN (persists subjects/synopsis/pages/date)
 - **IsbnAssigner** — Applies an ISBN search result to a book (updates metadata, downloads cover)
+- **BookClassifier** — Classifies a book fiction/nonfiction + genres via Claude Haiku (Net::HTTP; the official anthropic gem needs Ruby ≥ 3.2). Backfill: `bin/rails books:classify` (idempotent, only touches unclassified books)
+- **LibraryDashboard** — Aggregates per-user stats for the homepage (counts, top genres, recent books)
 - **GoodReadsImporter** — Imports GoodReads CSV export (shelves, books, reviews)
 - **SofaImporter** — Imports Sofa app CSV export
 

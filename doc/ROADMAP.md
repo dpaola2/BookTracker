@@ -23,6 +23,10 @@ Key decisions, and why:
 
 Backfill: `bin/rails books:classify` (idempotent — only touches `classification: nil`).
 
+**Backfill ran July 2026.** Final production state: **1,243 books, 100% classified** — 326 fiction / 917 nonfiction. Top genres: History 280, Business 250, Biography & Memoir 197, Science/Self-Help 184 each, Science Fiction 180, Philosophy 171. The run also surfaced 29 orphaned rows (movies/TV/board games from the Sofa import pointing at deleted shelves — no FKs meant they survived shelf deletion); deleted after confirming the Sofa export is preserved in `public/SofaExport-17022023-212837.csv` (pre-delete DB backup at `~/book-tracker/shared/pre-orphan-delete-backup.sqlite3` on the server).
+
+**Follow-on shipped:** BOOK-12 (PR #30) — the root page is now a library dashboard surfacing these stats: stat tiles, clickable top-genre badges deep-linking into search filters, recently updated books, and each shelf's latest additions.
+
 ## Priority 2 — First-class `status` and `rating` on Book (proposed)
 
 Free the shelves: add `status` (to_read / reading / read / abandoned) and a rating ("Loved, Meh, Disliked" — GitHub issue #6) as columns, so shelves can become collections/genres instead of encoding state in emoji names. Combined with Priority 1, "good unread scifi we own" becomes one query. The GoodReads importer already has this signal (`Exclusive Shelf`, `My Rating`) and currently lossy-compresses it into shelf names.
@@ -30,7 +34,7 @@ Free the shelves: add `status` (to_read / reading / read / abandoned) and a rati
 ## Priority 3 — Foundation hardening (proposed)
 
 - Indexes on `books.user_id`, `books.shelf_id`, `shelves.user_id` — every page scans without them.
-- NOT NULL constraints + foreign keys (associations are Rails-only today).
+- NOT NULL constraints + foreign keys (associations are Rails-only today — this is how the 29 orphaned Sofa-import rows survived their shelves being deleted).
 - API auth: move from `api_key`+`user_id` request params (credentials end up in logs; `user_id` is redundant) to an `Authorization` header, look up by key alone. Requires a coordinated iOS app update.
 - Dependabot: ~100 open vulnerability alerts on the repo (3 critical, 22 high as of July 2026).
 
