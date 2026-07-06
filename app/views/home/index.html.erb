@@ -1,2 +1,84 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Your Library</h1>
+
+<div class="row g-3 mb-4 text-center">
+  <div class="col-6 col-md-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="mb-0"><%= @dashboard.book_count %></h2>
+        <small class="text-body-secondary">Books</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="mb-0"><%= @dashboard.shelf_count %></h2>
+        <small class="text-body-secondary">Shelves</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="mb-0"><%= @dashboard.fiction_count %></h2>
+        <small class="text-body-secondary">Fiction</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="mb-0"><%= @dashboard.nonfiction_count %></h2>
+        <small class="text-body-secondary">Nonfiction</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-header">Top genres</div>
+  <div class="card-body">
+    <% @dashboard.top_genres.each do |genre, count| %>
+      <%= link_to book_searches_path(q: { genres_cont: genre }), class: "text-decoration-none" do %>
+        <span class="badge bg-info text-dark fs-6 mb-1"><%= genre %> <span class="badge bg-dark"><%= count %></span></span>
+      <% end %>
+    <% end %>
+    <% if @dashboard.unclassified_count.positive? %>
+      <span class="badge bg-warning text-dark fs-6 mb-1"><%= @dashboard.unclassified_count %> unclassified</span>
+    <% end %>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-6">
+    <div class="card mb-3">
+      <div class="card-header">Recently updated</div>
+      <div class="list-group list-group-flush">
+        <% @dashboard.recently_updated.each do |book| %>
+          <%= link_to book_path(book), class: "list-group-item list-group-item-action" do %>
+            <%= book.title %>
+            <% if book.classification.present? %>
+              <span class="badge bg-secondary"><%= book.classification.capitalize %></span>
+            <% end %>
+            <small class="text-body-secondary d-block"><%= time_ago_in_words(book.updated_at) %> ago</small>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <% @dashboard.shelves_with_recent_books.each do |shelf, books| %>
+      <div class="card mb-3">
+        <div class="card-header">
+          <%= link_to shelf.name, shelf_path(shelf), class: "text-decoration-none" %>
+        </div>
+        <div class="list-group list-group-flush">
+          <% books.each do |book| %>
+            <%= link_to book.title, book_path(book), class: "list-group-item list-group-item-action" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
